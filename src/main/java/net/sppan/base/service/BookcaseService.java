@@ -10,7 +10,6 @@ public interface BookcaseService extends IBaseService<BookcaseModel, Integer> {
 
 	/**
 	 * 根据书柜rfid查找
-	 * @param username
 	 * @return
 	 */
 	BookcaseModel findByBookcaseId(Integer id);

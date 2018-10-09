@@ -1,0 +1,110 @@
+2018.8.4：By Huanggua
+
+1.区分移动书柜和图书馆
+
+2.增加硬件接口(controller/Interface)
+
+	具体格式暂时定义如下:
+	(1)登录:login(String param),param解密后格式:secretKey+userId+时间戳，例如"login,admin,20180804104445"
+
+	(2)借书:borrowBook(String param),param解密后格式:secretKey+borrowParam+时间戳，其中borrowParam包含userId和bookId,以"*"分割,例如"borrowBook,admin*4,20180804104445"
+
+	(3)还书:returnBook(String param),param解密后格式:secretKey+returnParam+时间戳，其中returnParam包含userId、bookId、acturalBookcaseId（书柜ID）和acturalBoxId（书箱层号1/2/3）,以"*"分割,例如"returnBook,admin*4*21*3,20180804104445"
+
+	(4)书柜故障:malfunction(String param),param解密后格式:secretKey+bookcaseId+时间戳，例如"malfunction,21,20180804104445"
+
+	(5)柜门关闭超时:doorOverTime(String param),param解密后格式:secretKey+bookcaseId+时间戳，例如"doorOverTime,21,20180804104445"
+
+	(6)图书盘点:bookCheck(String param),param解密后格式:secretKey+bookRfidParam+时间戳，其中bookRfidParam为柜内所有书籍的RFID，以"*"分割,例如
+"bookCheck,00000001*00000002*00000003,20180804104445"
+
+3.数据库添加索引防止重复提交表单
+
+4.取消更换损坏RFID的定时任务，改为即时修改
+
+5.其他定时任务的增加与优化
+
+6.用户管理页面增加人工还款与自助还款按钮（未添加微信接口）
+
+7.部分表单增加动态功能
+
+8.增加图表页面，暂时放在主页
+
+9.其他功能添加和优化
+
+
+-----------------------------------
+2018.7.11：By Huanggua
+
+1.quartz前后台均已正常（建议通过页面对任务进行操作，直接改数据库有时候不认）
+
+2.添加3个定时任务，执行时间都为每天0点，任务分别为：(1)将更换RFID表中的数据修改至对应主表。(2)将已完成的借阅表迁移至借阅历史表。(3)判断用户应还书的时间来更新user表中的isOverdue
+
+3.书箱与书柜的位置信息显示优化，现table和form中全部显示为位置信息
+
+4.用户管理和书籍管理的搜索功能优化，增加更多搜索条件
+
+5.小bug修复和其他功能完善
+
+
+-----------------------------------
+
+2018.7.6：By Huanggua
+
+1.集成quartz(后台正常运行，前端报404)
+
+2.还书时对书箱的验证代码优化
+
+
+-----------------------------------
+
+2018.7.4：By Huanggua
+
+1.添加了对用户的当前借阅数量校验，避免出现超出config中的最大数量的情况
+
+2.修改增加借阅时只需要提供借阅人员rfid和书籍rfid
+
+3.前端列表id自增，与后台实际id无关
+
+4.部分标签颜色改变，显示更直观
+
+5.去掉大部分详细列表（列表左边加号），暂时用不到
+
+6.bookbox增加location字段，在弹出form中能够与bookcase关联
+
+7.修改表单提示为用户看得懂的中文以及其他页面文字描述的修改
+
+8.增加前台表单规则校验和日期样式选择器
+
+9.密码修改从用户修改表单中移除，在右上角用户名处可修改
+
+10.书籍状态栏处增加“已下架”
+
+11.增加借阅和归还时用户和书籍不存在的判断
+
+12.更新搜索，详细如下：
+
+	用户管理搜索框-学号/工号
+
+	角色管理搜索框-描述
+
+	资源管理搜索框-名称
+
+	默认设置搜索框-无
+	
+	更换RFID搜索框-旧RFID
+
+	书籍管理搜索框-自定义多条件
+
+	书柜管理搜索框-书柜位置
+
+	书箱管理搜索框-关联书柜位置
+
+	损坏登记搜索框-损坏用户RFID
+
+	当前借阅搜索框-借阅用户RFID
+
+	历史借阅搜索框-借阅用户RFID
+
+
+

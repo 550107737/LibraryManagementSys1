@@ -6,7 +6,594 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b694e7c-7e33-4081-8f5c-00bc9c92561b" name="Default" comment="" />
+    <list default="true" id="6b694e7c-7e33-4081-8f5c-00bc9c92561b" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/sppan/base/common/JsonResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/sppan/base/common/JsonResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/sppan/base/controller/API.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/sppan/base/controller/API.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ehcache.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logback.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/Application.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/common/Constats.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/common/DateEditor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/common/JsonResult.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/common/utils/DES.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/common/utils/EncryUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/common/utils/MD5Utils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/common/utils/RandomUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/common/utils/ScheduleUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/config/CacheConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/config/FreeMarkerConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/config/WebMvcConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/config/intercepter/CommonIntercepter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/config/shiro/MyRealm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/config/shiro/ShiroConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/config/shiro/ShiroManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/config/shiro/freemarker/AuthenticatedTag.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/config/shiro/freemarker/GuestTag.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/config/shiro/freemarker/HasAnyRolesTag.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/config/shiro/freemarker/HasPermissionTag.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/config/shiro/freemarker/HasRoleTag.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/config/shiro/freemarker/LacksPermissionTag.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/config/shiro/freemarker/LacksRoleTag.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/config/shiro/freemarker/NotAuthenticatedTag.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/config/shiro/freemarker/PermissionTag.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/config/shiro/freemarker/PrincipalTag.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/config/shiro/freemarker/RoleTag.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/config/shiro/freemarker/SecureTag.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/config/shiro/freemarker/ShiroTags.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/config/shiro/freemarker/UserTag.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/controller/BaseController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/controller/BookCtrl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/controller/BookboxCtrl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/controller/BookcaseCtrl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/controller/BooksCheckCtrl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/controller/BorrowCtrl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/controller/BorrowHistoryCtrl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/controller/BrokenBookRecordCtrl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/controller/ChangeRfidCtrl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/controller/ConfigCtrl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/controller/Interface.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/controller/RoleCtrl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/controller/ScheduleJobController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/controller/UserCtrl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/controller/admin/AdminIndexController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/controller/admin/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/controller/admin/system/ResourceController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/controller/web/IndexController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/dao/BookDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/dao/BookboxDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/dao/BookcaseDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/dao/BooksCheckDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/dao/BorrowDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/dao/BorrowHistoryDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/dao/BrokenBookRecordDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/dao/ChangeRfidDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/dao/ConfigDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/dao/IResourceDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/dao/RoleDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/dao/ScheduleJobDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/dao/UserDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/dao/support/IBaseDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/entity/BookModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/entity/BookboxModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/entity/BookcaseModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/entity/BooksCheckModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/entity/BorrowHistoryModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/entity/BorrowModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/entity/BoxMessageModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/entity/BrokenBookRecordModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/entity/ChangeRfidModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/entity/ConfigModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/entity/Resource.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/entity/RoleModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/entity/ScheduleJob.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/entity/UserModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/entity/support/BaseEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/quartz/AsyncJobFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/quartz/MyJobFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/quartz/QuartzConfigration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/quartz/SyncJobFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/quartz/event/ScheduleJobInit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/quartz/exceptions/ScheduleException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/quartz/job/ChangeBookCheckStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/quartz/job/ChangeRfid.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/quartz/job/ChangeUserIsOverdue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/quartz/job/CheckBooks.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/quartz/job/HelloCucumber.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/quartz/job/TransferToHistoryBorrow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/service/BookService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/service/BookboxService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/service/BookcaseService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/service/BooksCheckService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/service/BorrowHistoryService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/service/BorrowService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/service/BrokenBookRecordService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/service/ChangeRfidService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/service/ConfigService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/service/IResourceService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/service/RoleService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/service/ScheduleJobService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/service/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/service/impl/BookServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/service/impl/BookboxServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/service/impl/BookcaseServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/service/impl/BooksCheckServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/service/impl/BorrowHistoryServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/service/impl/BorrowServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/service/impl/BrokenBookRecordServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/service/impl/ChangeRfidServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/service/impl/ConfigServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/service/impl/ResourceServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/service/impl/RoleServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/service/impl/ScheduleJobServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/service/impl/UserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/service/support/IBaseService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/service/support/impl/BaseServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/vo/ScheduleJobVo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/vo/ZtreeView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/quartz.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/404.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/500.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/agile_board.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/article.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/badges_labels.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/basic_gallery.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/blog.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/blueimp.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/buttons.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/calendar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/carousel.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/chat_view.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/clients.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/code_editor.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/contacts.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/animate.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/bootstrap-rtl.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/demo/webuploader-demo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/font-awesome.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/font-awesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/patterns/header-profile-skin-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/patterns/header-profile-skin-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/patterns/header-profile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/patterns/shattered.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/blueimp/css/blueimp-gallery-indicator.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/blueimp/css/blueimp-gallery-video.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/blueimp/css/blueimp-gallery.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/blueimp/css/blueimp-gallery.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/blueimp/css/demo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/blueimp/img/error.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/blueimp/img/error.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/blueimp/img/loading.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/blueimp/img/play-pause.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/blueimp/img/play-pause.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/blueimp/img/video-play.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/blueimp/img/video-play.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/bootstrap-table/bootstrap-table.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/chosen/chosen-sprite.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/chosen/chosen-sprite@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/chosen/chosen.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/clockpicker/clockpicker.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/codemirror/ambiance.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/codemirror/codemirror.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/colorpicker/css/bootstrap-colorpicker.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/colorpicker/img/bootstrap-colorpicker/alpha-horizontal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/colorpicker/img/bootstrap-colorpicker/alpha.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/colorpicker/img/bootstrap-colorpicker/hue-horizontal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/colorpicker/img/bootstrap-colorpicker/hue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/colorpicker/img/bootstrap-colorpicker/saturation.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/cropper/cropper.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/dataTables/dataTables.bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/datapicker/datepicker3.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/dropzone/basic.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/dropzone/dropzone.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/duallistbox/bootstrap-duallistbox.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/footable/fonts/footable.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/footable/fonts/footable.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/footable/fonts/footable.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/footable/fonts/footable.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/footable/footable.core.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/fullcalendar/fullcalendar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/fullcalendar/fullcalendar.print.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/iCheck/custom.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/iCheck/green.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/iCheck/green@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/images/sort_asc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/images/sort_desc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/images/sprite-skin-flat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/images/spritemap.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/images/spritemap@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/ionRangeSlider/ion.rangeSlider.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/ionRangeSlider/ion.rangeSlider.skinFlat.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/jQueryUI/images/ui-bg_flat_0_aaaaaa_40x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/jQueryUI/images/ui-bg_flat_75_ffffff_40x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/jQueryUI/images/ui-icons_222222_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/jQueryUI/images/ui-icons_454545_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/jQueryUI/images/ui-icons_888888_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/jQueryUI/jquery-ui-1.10.4.custom.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/jasny/jasny-bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/jqgrid/ui.jqgrid.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/jsTree/32px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/jsTree/style.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/jsTree/throbber.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/markdown/bootstrap-markdown.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/morris/morris-0.4.3.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/multiselect/bootstrap-multiselect.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/nouslider/jquery.nouislider.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/plyr/plyr.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/plyr/sprite.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/simditor/simditor.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/steps/jquery.steps.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/summernote/summernote-bs3.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/summernote/summernote.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/sweetalert/sweetalert.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/switchery/switchery.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/toastr/toastr.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/treeview/bootstrap-treeview.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/webuploader/webuploader.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/zTree/awesomeStyle/awesome.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/zTree/awesomeStyle/awesome.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/zTree/awesomeStyle/fa.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/zTree/awesomeStyle/img/loading.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/zTree/metroStyle/img/line_conn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/zTree/metroStyle/img/loading.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/zTree/metroStyle/img/metro.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/zTree/metroStyle/img/metro.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/zTree/metroStyle/metroStyle.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/zTree/zTreeStyle/img/diy/1_close.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/zTree/zTreeStyle/img/diy/1_open.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/zTree/zTreeStyle/img/diy/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/zTree/zTreeStyle/img/diy/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/zTree/zTreeStyle/img/diy/4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/zTree/zTreeStyle/img/diy/5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/zTree/zTreeStyle/img/diy/6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/zTree/zTreeStyle/img/diy/7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/zTree/zTreeStyle/img/diy/8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/zTree/zTreeStyle/img/diy/9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/zTree/zTreeStyle/img/line_conn.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/zTree/zTreeStyle/img/loading.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/zTree/zTreeStyle/img/zTreeStandard.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/zTree/zTreeStyle/img/zTreeStandard.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/plugins/zTree/zTreeStyle/zTreeStyle.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css_animation.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/diff.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/draggable_panels.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/empty_page.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/faq.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/file_manager.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/fontawesome.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/fonts/FontAwesome.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/fonts/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/fonts/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/fonts/fontawesome-webfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/form_advanced.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/form_basic.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/form_builder.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/form_editors.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/form_file_upload.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/form_markdown.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/form_simditor.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/form_validate.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/form_webuploader.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/form_wizard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/forum_main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/glyphicons.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/graph_echarts.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/graph_flot.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/graph_metrics.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/graph_morris.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/graph_peity.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/graph_rickshaw.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/graph_sparkline.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/grid_options.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/iconfont.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/ie.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/img/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/img/a1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/img/a2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/img/a3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/img/a4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/img/a5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/img/a6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/img/a7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/img/a8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/img/a9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/img/bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/img/browser.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/img/iconfont-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/img/icons.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/img/loading-upload.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/img/locked.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/img/login-background.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/img/p1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/img/p2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/img/p3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/img/profile.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/img/profile_small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/img/progress.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/img/sprite-skin-flat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/img/success.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/img/user.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/img/webuploader.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/img/wenku_logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/index_v1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/invoice.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/invoice_print.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/content.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/CONTRIBUTING.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/aes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/bower.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/cipher-core.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/core.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/crypto-js.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/docs/QuickStartGuide.wiki" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/enc-base64.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/enc-hex.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/enc-latin1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/enc-utf16.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/enc-utf8.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/evpkdf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/format-hex.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/format-openssl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/hmac-md5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/hmac-ripemd160.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/hmac-sha1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/hmac-sha224.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/hmac-sha256.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/hmac-sha3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/hmac-sha384.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/hmac-sha512.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/hmac.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/lib-typedarrays.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/md5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/mode-cfb.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/mode-ctr-gladman.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/mode-ctr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/mode-ecb.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/mode-ofb.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/pad-ansix923.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/pad-iso10126.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/pad-iso97971.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/pad-nopadding.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/pad-pkcs7.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/pad-zeropadding.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/pbkdf2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/rabbit-legacy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/rabbit.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/rc4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/ripemd160.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/sha1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/sha224.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/sha256.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/sha3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/sha384.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/sha512.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/tripledes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/crypto-js/x64-core.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/demo/bootstrap-table-demo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/demo/bootstrap_table_test.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/demo/bootstrap_table_test2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/demo/echarts-demo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/demo/flot-demo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/demo/form-advanced-demo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/demo/form-validate-demo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/demo/layer-demo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/demo/morris-demo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/demo/peity-demo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/demo/photos.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/demo/rickshaw-demo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/demo/sparkline-demo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/demo/table_base.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/demo/treeview-demo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/demo/webuploader-demo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/hAdmin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/highcharts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/jquery-ui-1.10.4.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/jquery-ui.custom.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/jquery.min.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/beautifyhtml/beautifyhtml.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/blueimp/jquery.blueimp-gallery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/bootstrap-table/bootstrap-table.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/chartJs/Chart.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/chosen/chosen.jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/cropper/cropper.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/dataTables/dataTables.bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/dataTables/jquery.dataTables.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/datapicker/bootstrap-datepicker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/duallistbox/jquery.bootstrap-duallistbox.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/echarts/echarts-all.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/flot/curvedLines.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/flot/jquery.flot.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/flot/jquery.flot.pie.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/flot/jquery.flot.resize.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/flot/jquery.flot.spline.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/flot/jquery.flot.symbol.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/flot/jquery.flot.tooltip.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/footable/footable.all.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/fullcalendar/fullcalendar.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/fullcalendar/moment.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/gritter/images/gritter-light.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/gritter/images/gritter.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/gritter/images/ie-spacer.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/gritter/jquery.gritter.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/gritter/jquery.gritter.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/iCheck/icheck.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/ionRangeSlider/ion.rangeSlider.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/ionRangeSlider/jasny/jasny-bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/jasny/jasny-bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/jeditable/jquery.jeditable.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/jqgrid/i18n/grid.locale-cn.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/jqgrid/jquery.jqGrid.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/jquery-ui/jquery-ui.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/jsTree/jstree.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/jsTree/jstree.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/layer/extend/layer.ext.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/layer/laydate/laydate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/layer/laydate/need/laydate.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/layer/laydate/skins/default/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/layer/laydate/skins/default/laydate.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/layer/layer.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/layer/layim/data/chatlog.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/layer/layim/data/friend.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/layer/layim/data/group.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/layer/layim/data/groups.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/layer/layim/layim.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/layer/layim/layim.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/layer/layim/loading.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/layer/skin/default/icon-ext.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/layer/skin/default/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/layer/skin/default/icon_ext.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/layer/skin/default/loading-0.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/layer/skin/default/loading-1.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/layer/skin/default/loading-2.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/layer/skin/default/textbg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/layer/skin/default/xubox_ico0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/layer/skin/default/xubox_loading0.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/layer/skin/default/xubox_loading1.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/layer/skin/default/xubox_loading2.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/layer/skin/default/xubox_loading3.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/layer/skin/default/xubox_title0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/layer/skin/layer.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/layer/skin/layer.ext.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/layer/skin/moon/default.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/layer/skin/moon/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/markdown/bootstrap-markdown.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/markdown/bootstrap-markdown.zh.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/markdown/markdown.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/markdown/to-markdown.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/metisMenu/jquery.metisMenu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/multiselect/bootstrap-multiselect.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/peity/jquery.peity.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/plyr/plyr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/preetyTextDiff/jquery.pretty-text-diff.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/prettyfile/bootstrap-prettyfile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/slimscroll/jquery.slimscroll.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/sparkline/jquery.sparkline.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/suggest/bootstrap-suggest.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/suggest/data.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/toastr/toastr.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/treeview/bootstrap-treeview.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/validate/additional-methods.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/validate/jquery.validate.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/validate/messages_zh.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/zTree/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/zTree/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/zTree/jquery-1.4.4.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/zTree/jquery.ztree.all.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/zTree/jquery.ztree.all.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/zTree/jquery.ztree.core.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/zTree/jquery.ztree.core.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/zTree/jquery.ztree.excheck.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/zTree/jquery.ztree.excheck.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/zTree/jquery.ztree.exedit.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/zTree/jquery.ztree.exedit.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/zTree/jquery.ztree.exhide.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/zTree/jquery.ztree.exhide.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/plugins/zTree/ztree.3.5.26.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/jstree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/layer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/layerdate.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/layouts.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/lockscreen.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/login_v2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/mail_compose.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/mail_detail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/mailbox.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/modal_window.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/nestable_list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/notifications.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/pin_board.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/plyr.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/profile.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/project_detail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/projects.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/search_results.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/social_feed.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/spinners.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/sweetalert.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/table_basic.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/table_bootstrap.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/table_data_tables.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/table_foo_table.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/table_jqgrid.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/tabs_panels.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/teams_board.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/timeline.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/timeline_v2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/toastr_notifications.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/tree_view.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/typography.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/widgets.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/index.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/login.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/resource/form.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/resource/index.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/role/form.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/role/grant.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/role/index.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/welcome.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/bookbox/bookbox.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/bookbox/form.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/bookcase/bookcase.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/bookcase/form.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/books/addForm.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/books/books.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/books/editForm.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/books/searchForm.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/books/transferForm.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/bookscheck/bookscheck.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/bookscheck/form.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/borrow/borrow.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/borrow/borrowAddForm.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/borrow/borrowEditForm.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/borrow/borrow_student.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/borrow/borrowhistory.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/borrow/borrowhistory_student.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/borrow/overdueListForm.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/borrow/returnForm.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/brokenbookrecord/brokenbookrecord.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/brokenbookrecord/form.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/changerfid/changerfid.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/changerfid/form.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/config/config.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/config/form.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/quartz/form.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/quartz/quartz.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/user/addform.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/user/editform.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/user/grant.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/user/index.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/user/repay.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/user/searchForm.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/user/updatePwd.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/user/user_student.ftl" beforeDir="false" />
+    </list>
     <ignored path="SPPanAdmin.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -36,7 +623,7 @@
       <file leaf-file-name="BookDao.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/net/sppan/base/dao/BookDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1269">
+            <state>
               <caret line="56" column="100" selection-start-line="56" selection-start-column="100" selection-end-line="56" selection-end-column="100" />
             </state>
           </provider>
@@ -63,11 +650,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IndexController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="IndexController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/net/sppan/base/controller/web/IndexController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="378">
               <caret line="24" selection-start-line="24" selection-end-line="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="API.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/net/sppan/base/controller/API.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="296">
+              <caret line="48" column="39" selection-start-line="48" selection-start-column="39" selection-end-line="48" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#4129#4140#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JsonResult.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/net/sppan/base/common/JsonResult.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="160" column="22" selection-start-line="160" selection-start-column="22" selection-end-line="160" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2932#2933#0" expanded="true" />
+                <element signature="e#2952#2953#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -89,28 +703,6 @@
               <folding>
                 <element signature="e#1329#1330#0" expanded="true" />
                 <element signature="e#1375#1376#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BorrowHistoryService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/net/sppan/base/service/BorrowHistoryService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="15" column="85" selection-start-line="15" selection-start-column="85" selection-end-line="15" selection-end-column="85" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BorrowHistoryCtrl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/net/sppan/base/controller/BorrowHistoryCtrl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="783">
-              <caret line="47" column="14" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
-              <folding>
-                <element signature="e#1086#1087#0" expanded="true" />
-                <element signature="e#1139#1140#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -174,12 +766,12 @@
       <find>md</find>
     </findStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/net/sppan/base/controller/BookCtrl.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/admin/index.ftl" />
-        <option value="$PROJECT_DIR$/src/main/java/net/sppan/base/dao/BooksCheckDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/sppan/base/service/impl/BooksCheckServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/sppan/base/service/BooksCheckService.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/sppan/base/entity/BooksCheckModel.java" />
@@ -228,6 +820,9 @@
         <option value="$PROJECT_DIR$/src/main/java/net/sppan/base/service/impl/BookServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/sppan/base/controller/Interface.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/net/sppan/base/controller/API.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/sppan/base/common/utils/JsonUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/sppan/base/common/JsonResult.java" />
       </list>
     </option>
   </component>
@@ -259,46 +854,35 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="SPPanAdmin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LibraryManagementSys_0703" type="462c0819:PsiDirectoryNode" />
+              <item name="LibraryManagementSys" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SPPanAdmin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LibraryManagementSys_0703" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SPPanAdmin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LibraryManagementSys_0703" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SPPanAdmin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LibraryManagementSys_0703" type="462c0819:PsiDirectoryNode" />
+              <item name="LibraryManagementSys" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SPPanAdmin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LibraryManagementSys_0703" type="462c0819:PsiDirectoryNode" />
+              <item name="LibraryManagementSys" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SPPanAdmin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LibraryManagementSys_0703" type="462c0819:PsiDirectoryNode" />
+              <item name="LibraryManagementSys" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SPPanAdmin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LibraryManagementSys_0703" type="462c0819:PsiDirectoryNode" />
+              <item name="LibraryManagementSys" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -306,28 +890,27 @@
             </path>
             <path>
               <item name="SPPanAdmin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LibraryManagementSys_0703" type="462c0819:PsiDirectoryNode" />
+              <item name="LibraryManagementSys" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="base" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SPPanAdmin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LibraryManagementSys" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="base" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SPPanAdmin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LibraryManagementSys_0703" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -350,25 +933,25 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\java_workspace2\LibraryManagementSys_0703\src\main\resources\static\assets\js" />
-      <recent name="D:\java_workspace2\LibraryManagementSys_0703\src\main\resources\templates" />
-      <recent name="G:\GW\图书系统2018.703\LibraryManagementSys\src\main\resources" />
-      <recent name="D:\java_workspace2\LibraryManagementSys\src\main\resources\templates\books" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="net.sppan.base.entity" />
-      <recent name="net.sppan.base.quartz.job" />
-      <recent name="net.sppan.base.dao" />
-      <recent name="net.sppan.base.service.impl" />
-      <recent name="net.sppan.base.service" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\java_workspace2\LibraryManagementSys_0703\src\main\resources\templates\user" />
       <recent name="D:\java_workspace2\LibraryManagementSys_0703\src\main\resources\templates" />
       <recent name="D:\java_workspace2\LibraryManagementSys_0703\src\main\resources\static\assets\js" />
       <recent name="D:\java_workspace2\LibraryManagementSys_0703\src\main\resources\templates\books" />
       <recent name="D:\java_workspace2\LibraryManagementSys_0703\src\main\resources\templates\borrow" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="net.sppan.base.common.utils" />
+      <recent name="net.sppan.base.entity" />
+      <recent name="net.sppan.base.quartz.job" />
+      <recent name="net.sppan.base.dao" />
+      <recent name="net.sppan.base.service.impl" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\java_workspace2\LibraryManagementSys_0703\src\main\resources\static\assets\js" />
+      <recent name="D:\java_workspace2\LibraryManagementSys_0703\src\main\resources\templates" />
+      <recent name="G:\GW\图书系统2018.703\LibraryManagementSys\src\main\resources" />
+      <recent name="D:\java_workspace2\LibraryManagementSys\src\main\resources\templates\books" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -616,11 +1199,13 @@
       <workItem from="1533975509165" duration="2358000" />
       <workItem from="1534416761524" duration="5103000" />
       <workItem from="1534485383962" duration="129000" />
+      <workItem from="1539259075311" duration="121000" />
+      <workItem from="1539259424842" duration="123000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="442431000" />
+    <option name="totallyTimeSpent" value="442675000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -638,19 +1223,19 @@
       <window_info id="UI Designer" order="3" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49479166" weight="0.37513283" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.4978701" weight="0.27417642" />
       <window_info id="Palette&#9;" order="6" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="bottom" id="Version Control" order="12" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4978701" weight="0.33475026" />
-      <window_info anchor="bottom" id="Version Control" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Spring" order="7" weight="0.32969433" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32969433" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4940978" visible="true" weight="0.1734375" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4940978" visible="true" weight="0.1734375" />
       <window_info anchor="bottom" id="Problems" order="15" />
       <window_info anchor="right" id="Bean Validation" order="9" />
       <window_info id="Web" order="5" sideWeight="0.5059022" side_tool="true" weight="0.17944622" />
+      <window_info anchor="right" id="SciView" order="11" />
       <window_info anchor="right" id="Theme Preview" order="11" />
       <window_info id="Favorites" order="4" sideWeight="0.5059022" side_tool="true" weight="0.17944622" />
       <window_info anchor="bottom" id="Inspection Results" order="15" weight="0.32943678" />
@@ -660,6 +1245,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="ConsoleMavenPlugin" order="11" weight="0.32969433" />
+      <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.4978701" weight="0.27417642" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32943678" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -681,14 +1267,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/net/sppan/base/controller/web/IndexController.java</url>
-          <line>24</line>
-          <properties />
-          <option name="timeStamp" value="190" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="191" />
     </breakpoint-manager>
   </component>
@@ -697,27 +1275,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/bookscheck/bookscheck.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="104" column="33" lean-forward="true" selection-start-line="103" selection-start-column="16" selection-end-line="104" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/books/books.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="108" column="33" selection-start-line="108" selection-start-column="33" selection-end-line="108" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/sppan/base/service/BooksCheckService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/bookbox/bookbox.ftl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
@@ -998,7 +1555,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/net/sppan/base/dao/BookDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1269">
+        <state>
           <caret line="56" column="100" selection-start-line="56" selection-start-column="100" selection-end-line="56" selection-end-column="100" />
         </state>
       </provider>
@@ -1052,10 +1609,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/sppan/base/common/utils/JsonUtil.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/net/sppan/base/controller/web/IndexController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/sppan/base/controller/API.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="48" column="39" selection-start-line="48" selection-start-column="39" selection-end-line="48" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4129#4140#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/sppan/base/common/JsonResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="160" column="22" selection-start-line="160" selection-start-column="22" selection-end-line="160" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2932#2933#0" expanded="true" />
+            <element signature="e#2952#2953#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

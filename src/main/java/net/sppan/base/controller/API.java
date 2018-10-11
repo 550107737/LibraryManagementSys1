@@ -1,5 +1,7 @@
 package net.sppan.base.controller;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import net.sppan.base.common.JsonResult;
 import net.sppan.base.common.utils.CryptoUtil;
 import net.sppan.base.common.utils.EncryUtil;
@@ -39,11 +41,21 @@ public class API extends BaseController {
      * @方法名: login
      * @功能描述: 用户刷卡开门状态
      * @创建人: 黄梓莘
-     * @创建时间： 2018-7-29
+     * @创建时间： 2018-10-11
      */
     @RequestMapping(value = {"/door/getDoorOpenStatus"})
     public JsonResult login(ParamModel param,String userId) {
+        Date date=new Date();
+        JsonResult jsonResult=new JsonResult();
+        jsonResult.setApi_flag("summerdeer");
+        jsonResult.setServer_time(date.getTime());
+        jsonResult.setRetry_after_seconds(0);
         try {
+            //优先生成服务器token
+            String serverAPIKey = CryptoUtil.md5(LabConsts.SECRET_KEY).concat(CryptoUtil.md5(param.getBookcaseSN())).
+                    concat(date.getTime()).concat(CryptoUtil.md5(userId));
+            jsonResult.setToken(serverAPIKey);
+
             // todo 参数校验,所有接口都要用
             String serverAPIKey1 = checkParam(param,userId);
 
@@ -52,14 +64,19 @@ public class API extends BaseController {
             borrowModel.setUserId(userId);
             borrowService.checkUserBorrowable(borrowModel, 0);
         } catch (Exception e) {
-            return JsonResult.failure(e.getMessage());
+            jsonResult.setStatus(0);
+            jsonResult.setResult(false);
+            jsonResult.setMessage(e.getMessage());
+            return jsonResult;
         }
-        return JsonResult.success();
+        jsonResult.setStatus(1);
+        jsonResult.setResult(true);
+        return jsonResult;
     }
 
     private String checkParam(ParamModel param,String userId) throws Exception {
         //todo 超时校验
-        if (!verifyTimestamp(20, param.getTime())) {
+        if (!verifyTimestamp(60, param.getTime())) {
             throw new Exception("操作超时！");
         }
         //todo 加密校驗
@@ -79,13 +96,24 @@ public class API extends BaseController {
      * @创建时间： 2018-7-29
      */
     @RequestMapping(value = {"/door/reportDoorCloseStatus"})
-    public JsonResult borrowBook(ParamModel param, String userId, String bookList) {
+    public JsonResult borrowBook(ParamModel param, String userId, String jsonBookListStr) {
+        Date date=new Date();
+        JsonResult jsonResult=new JsonResult();
+        jsonResult.setApi_flag("summerdeer");
+        jsonResult.setServer_time(date.getTime());
+        jsonResult.setRetry_after_seconds(0);
         try {
+            //优先生成服务器token
+            String serverAPIKey = CryptoUtil.md5(LabConsts.SECRET_KEY).concat(CryptoUtil.md5(param.getBookcaseSN())).
+                    concat(date.getTime()).concat(CryptoUtil.md5(userId));
+            jsonResult.setToken(serverAPIKey);
 
             //todo 1. 校验 ，和开门登录的方法一样
             String serverAPIKey1 = checkParam(param,userId);
 
             //todo 2. 将json格式的booklist转化为booklist
+            List<BookModel> bookModels = new ArrayList<BookModel>();
+            bookModels = JSON.parseArray(jsonBookListStr, BookModel.class);
 
             //todo 3. 判断多出书还是少了书籍（单独写一个方法，盘点的时候可以直接调用）
 
@@ -95,9 +123,14 @@ public class API extends BaseController {
 
 
         } catch (Exception e) {
-            return JsonResult.failure(e.getMessage());
+            jsonResult.setStatus(0);
+            jsonResult.setResult(false);
+            jsonResult.setMessage(e.getMessage());
+            return jsonResult;
         }
-        return JsonResult.success();
+        jsonResult.setStatus(1);
+        jsonResult.setResult(true);
+        return jsonResult;
     }
 
 
@@ -110,6 +143,10 @@ public class API extends BaseController {
      */
     @RequestMapping(value = {"/door/reportGridInventoryData"})
     public JsonResult bookCheck(ParamModel param, String  gridsn, String rfids) {
+        JsonResult jsonResult=new JsonResult();
+        jsonResult.setApi_flag("summerdeer");
+        jsonResult.setServer_time(new Date().getTime());
+        jsonResult.setRetry_after_seconds(0);
         try {
 
             //todo 1. 校验 param，没有userId 用空字符串
@@ -147,10 +184,13 @@ public class API extends BaseController {
                 bookModel.setCheckDate(date);
                 bookService.saveOrUpdate(bookModel);
             }*/
-        } catch (Exception e) {
-            return JsonResult.failure(e.getMessage());
+        }catch (Exception e) {
+            jsonResult.setResult(false);
+            jsonResult.setMessage(e.getMessage());
+            return jsonResult;
         }
-        return JsonResult.success();
+        jsonResult.setResult(true);
+        return jsonResult;
     }
 
 
@@ -163,6 +203,10 @@ public class API extends BaseController {
      */
     @RequestMapping(value = {"/door/sendAlarmData"})
     public JsonResult doorOverTime(String param) {
+        JsonResult jsonResult=new JsonResult();
+        jsonResult.setApi_flag("summerdeer");
+        jsonResult.setServer_time(new Date().getTime());
+        jsonResult.setRetry_after_seconds(0);
         try {
 
             //todo 1. 校验参数
@@ -187,9 +231,12 @@ public class API extends BaseController {
             //以下等待微信通知接口
 
         } catch (Exception e) {
-            return JsonResult.failure(e.getMessage());
+            jsonResult.setResult(false);
+            jsonResult.setMessage(e.getMessage());
+            return jsonResult;
         }
-        return JsonResult.success();
+        jsonResult.setResult(true);
+        return jsonResult;
     }
 
     /**

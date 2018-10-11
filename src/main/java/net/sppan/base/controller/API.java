@@ -116,6 +116,7 @@ public class API extends BaseController {
             bookModels = JSON.parseArray(jsonBookListStr, BookModel.class);
 
             //todo 3. 判断多出书还是少了书籍（单独写一个方法，盘点的时候可以直接调用）
+            checkBorrowOrReturn(param.getBookcaseSN());
 
             // todo 4. 更新用户借阅记录--借书/还书表
 
@@ -133,6 +134,9 @@ public class API extends BaseController {
         return jsonResult;
     }
 
+    private void checkBorrowOrReturn(String bookcaseSN) {
+
+    }
 
 
     /**

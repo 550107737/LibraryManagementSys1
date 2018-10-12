@@ -8,7 +8,7 @@ import net.sppan.base.common.utils.CryptoUtil;
 import net.sppan.base.common.utils.EncryUtil;
 import net.sppan.base.common.utils.JsonUtil;
 import net.sppan.base.common.utils.MD5Utils;
-import net.sppan.base.config.consts.LabConsts;
+//import net.sppan.base.config.consts.LabConsts;
 import net.sppan.base.dao.BookDao;
 import net.sppan.base.entity.BookModel;
 import net.sppan.base.entity.BookcaseModel;
@@ -58,9 +58,9 @@ public class API extends BaseController {
         jsonResult.setRetry_after_seconds(0);
         try {
             //优先生成服务器token
-            String serverAPIKey = CryptoUtil.md5(LabConsts.SECRET_KEY).concat(CryptoUtil.md5(param.getBookcaseSN())).
-                    concat(date.getTime()).concat(CryptoUtil.md5(userId));
-            jsonResult.setToken(serverAPIKey);
+//            String serverAPIKey = CryptoUtil.md5(LabConsts.SECRET_KEY).concat(CryptoUtil.md5(param.getBookcaseSN())).
+//                    concat(date.getTime()).concat(CryptoUtil.md5(userId));
+//            jsonResult.setToken(serverAPIKey);
 
             // todo 参数校验,所有接口都要用
             String serverAPIKey1 = checkParam(param,userId);
@@ -86,7 +86,7 @@ public class API extends BaseController {
             throw new Exception("操作超时！");
         }
         //todo 加密校驗
-        String serverAPIKey = CryptoUtil.md5(LabConsts.SECRET_KEY).concat(CryptoUtil.md5(param.getBookcaseSN())).
+        String serverAPIKey = CryptoUtil.md5("修改这里！").concat(CryptoUtil.md5(param.getBookcaseSN())).
                 concat(param.getTime()).concat(CryptoUtil.md5(userId));
         if (param.getToken() != CryptoUtil.md5(serverAPIKey)){
             throw new Exception("校验错误！");
@@ -110,9 +110,9 @@ public class API extends BaseController {
         jsonResult.setRetry_after_seconds(0);
         try {
             //优先生成服务器token
-            String serverAPIKey = CryptoUtil.md5(LabConsts.SECRET_KEY).concat(CryptoUtil.md5(param.getBookcaseSN())).
-                    concat(date.getTime()).concat(CryptoUtil.md5(userId));
-            jsonResult.setToken(serverAPIKey);
+//            String serverAPIKey = CryptoUtil.md5(LabConsts.SECRET_KEY).concat(CryptoUtil.md5(param.getBookcaseSN())).
+//                    concat(date.getTime()).concat(CryptoUtil.md5(userId));
+//            jsonResult.setToken(serverAPIKey);
 
             //todo 1. 校验 ，和开门登录的方法一样
             String serverAPIKey1 = checkParam(param,userId);
@@ -219,9 +219,9 @@ public class API extends BaseController {
         jsonResult.setRetry_after_seconds(0);
         try {
             //优先生成服务器token
-            String serverAPIKey = CryptoUtil.md5(LabConsts.SECRET_KEY).concat(CryptoUtil.md5(param.getBookcaseSN())).
-                    concat(date.getTime());
-            jsonResult.setToken(serverAPIKey);
+//            String serverAPIKey = CryptoUtil.md5(LabConsts.SECRET_KEY).concat(CryptoUtil.md5(param.getBookcaseSN())).
+//                    concat(date.getTime());
+//            jsonResult.setToken(serverAPIKey);
             //todo 1. 校验 param，没有userId 用空字符串
             String serverAPIKey1 = checkParam(param,"");
 
@@ -283,9 +283,9 @@ public class API extends BaseController {
         jsonResult.setRetry_after_seconds(0);
         try {
             //优先生成服务器token
-            String serverAPIKey = CryptoUtil.md5(LabConsts.SECRET_KEY).concat(CryptoUtil.md5(param.getBookcaseSN())).
-                    concat(date.getTime());
-            jsonResult.setToken(serverAPIKey);
+//            String serverAPIKey = CryptoUtil.md5(LabConsts.SECRET_KEY).concat(CryptoUtil.md5(param.getBookcaseSN())).
+//                    concat(date.getTime());
+//            jsonResult.setToken(serverAPIKey);
 
             //todo 1. 校验参数
             String serverAPIKey1 = checkParam(param,"");

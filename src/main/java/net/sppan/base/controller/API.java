@@ -2,11 +2,14 @@ package net.sppan.base.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.sun.istack.internal.Nullable;
 import net.sppan.base.common.JsonResult;
 import net.sppan.base.common.utils.CryptoUtil;
 import net.sppan.base.common.utils.EncryUtil;
+import net.sppan.base.common.utils.JsonUtil;
 import net.sppan.base.common.utils.MD5Utils;
 import net.sppan.base.config.consts.LabConsts;
+import net.sppan.base.dao.BookDao;
 import net.sppan.base.entity.BookModel;
 import net.sppan.base.entity.BookcaseModel;
 import net.sppan.base.entity.BorrowModel;
@@ -20,9 +23,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @Controller
 @RequestMapping("/API")
@@ -37,6 +38,11 @@ public class API extends BaseController {
     @Autowired
     private BookcaseService bookcaseService;
 
+    @Autowired
+    private BookDao bookDao;
+
+    @Autowired
+    private BorrowCtrl borrowCtrl;
     /**
      * @方法名: login
      * @功能描述: 用户刷卡开门状态
@@ -74,7 +80,7 @@ public class API extends BaseController {
         return jsonResult;
     }
 
-    private String checkParam(ParamModel param,String userId) throws Exception {
+    private String checkParam(ParamModel param, String userId) throws Exception {
         //todo 超时校验
         if (!verifyTimestamp(60, param.getTime())) {
             throw new Exception("操作超时！");
@@ -114,14 +120,40 @@ public class API extends BaseController {
             //todo 2. 将json格式的booklist转化为booklist
             List<BookModel> bookModels = new ArrayList<BookModel>();
             bookModels = JSON.parseArray(jsonBookListStr, BookModel.class);
-
             //todo 3. 判断多出书还是少了书籍（单独写一个方法，盘点的时候可以直接调用）
-            checkBorrowOrReturn(param.getBookcaseSN());
+            int difference=checkBorrowOrReturn(param.getBookcaseSN(),bookModels.size());//书柜现有书籍数量减去数据库数量
+            List<BookModel> dbBookModels=bookDao.findAllByInBoxAndCheckStatus(0,0);
 
+            List<BookModel> diff=new ArrayList<BookModel>();
+            if(diff.size()>0){
+                jsonResult.setData(JsonUtil.list2json(diff));
+            }else{
+                //差异为0代表没有书籍变动，直接返回，默认借书状态
+                jsonResult.setBorrowStatus(0);
+                jsonResult.setStatus(1);
+                jsonResult.setResult(true);
+                return jsonResult;
+            }
+            BorrowModel borrowModel=new BorrowModel();
+            borrowModel.setUserId(userId);
             // todo 4. 更新用户借阅记录--借书/还书表
-
-            //todo 4.返回APP：token、status、少的书籍list，或者多的list
-
+            if(difference>0){//现有书籍比数据库里的多，代表还书
+                //还书
+                jsonResult.setBorrowStatus(1);
+                diff=getDifference(bookModels,dbBookModels);//第一个参数数量比第二个要大
+                for(BookModel bookModel:diff){
+                    borrowModel.setBookRfid(bookModel.getBookRfid());
+                    borrowCtrl.returnBorrow(borrowModel,0,"应有地点！");
+                }
+            }else{
+                //借书
+                jsonResult.setBorrowStatus(0);
+                diff=getDifference(dbBookModels,bookModels);
+                for(BookModel bookModel:diff){
+                    borrowModel.setBookRfid(bookModel.getBookRfid());
+                    borrowCtrl.addBorrow(borrowModel);
+                }
+            }
 
         } catch (Exception e) {
             jsonResult.setStatus(0);
@@ -134,8 +166,37 @@ public class API extends BaseController {
         return jsonResult;
     }
 
-    private void checkBorrowOrReturn(String bookcaseSN) {
+    /*
+    用一个map存放list1的所有元素，其中的key为list1的各个元素，
+    value为该元素出现的次数,接着把list2的所有元素也放到map里，如果已经存在则value加1，
+    最后只要取出map里value为1的元素即可，
+     */
+    private List<BookModel> getDifference(List<BookModel> bigList, List<BookModel> smallList) {
+        Map<BookModel,Integer> map = new HashMap<BookModel,Integer>(bigList.size()+smallList.size());
+        List<BookModel> diff = new ArrayList<BookModel>();
 
+        for (BookModel bookModel : bigList) {
+            map.put(bookModel, 1);
+        }
+        for (BookModel bookModel : smallList) {
+            Integer cc = map.get(bookModel);
+            if(cc!=null) {
+                map.put(bookModel, ++cc);
+                continue;
+            }
+            map.put(bookModel, 1);
+        }
+        for(Map.Entry<BookModel, Integer> entry:map.entrySet()) {
+            if(entry.getValue()==1) {
+                diff.add(entry.getKey());
+            }
+        }
+        return diff;
+    }
+
+    private int checkBorrowOrReturn(String bookcaseSN,int existingBookNum) {
+        List<BookModel> dbBookModels=bookDao.findAllByInBoxAndCheckStatus(0,0);
+        return existingBookNum-dbBookModels.size();
     }
 
 
@@ -147,12 +208,16 @@ public class API extends BaseController {
      */
     @RequestMapping(value = {"/door/reportGridInventoryData"})
     public JsonResult bookCheck(ParamModel param, String  gridsn, String rfids) {
+        Date date=new Date();
         JsonResult jsonResult=new JsonResult();
         jsonResult.setApi_flag("summerdeer");
-        jsonResult.setServer_time(new Date().getTime());
+        jsonResult.setServer_time(date.getTime());
         jsonResult.setRetry_after_seconds(0);
         try {
-
+            //优先生成服务器token
+            String serverAPIKey = CryptoUtil.md5(LabConsts.SECRET_KEY).concat(CryptoUtil.md5(param.getBookcaseSN())).
+                    concat(date.getTime());
+            jsonResult.setToken(serverAPIKey);
             //todo 1. 校验 param，没有userId 用空字符串
             String serverAPIKey1 = checkParam(param,"");
 
@@ -206,33 +271,29 @@ public class API extends BaseController {
      * @创建时间： 2018-7-29
      */
     @RequestMapping(value = {"/door/sendAlarmData"})
-    public JsonResult doorOverTime(String param) {
+    public JsonResult doorOverTime(ParamModel param) {
+        Date date=new Date();
         JsonResult jsonResult=new JsonResult();
         jsonResult.setApi_flag("summerdeer");
         jsonResult.setServer_time(new Date().getTime());
         jsonResult.setRetry_after_seconds(0);
         try {
+            //优先生成服务器token
+            String serverAPIKey = CryptoUtil.md5(LabConsts.SECRET_KEY).concat(CryptoUtil.md5(param.getBookcaseSN())).
+                    concat(date.getTime());
+            jsonResult.setToken(serverAPIKey);
 
             //todo 1. 校验参数
-
+            String serverAPIKey1 = checkParam(param,"");
             //todo 2.记录到database里
-
-            //todo 3.等待微信接口
-            /*String params[] = checkAndDecryptParam(param, 3);
-            String secretKey = params[0];
-            String bookcaseId = params[1];
-            String timestamp = params[2];
-            if (!secretKey.equals("doorOverTime")) {
-                throw new Exception("秘钥不匹配！");
-            }
-            if (!verifyTimestamp(20, timestamp)) {
-                throw new Exception("操作超时！");
-            }
-            BookcaseModel bookcaseModel = bookcaseService.find(Integer.valueOf(bookcaseId));
+            BookcaseModel bookcaseModel = bookcaseService.findByBookcaseRfid(param.getBookcaseSN());
             if (bookcaseModel == null) {
                 throw new Exception("未找到未关门书柜");
-            }*/
-            //以下等待微信通知接口
+            }
+
+            //todo 3.等待微信接口
+
+
 
         } catch (Exception e) {
             jsonResult.setResult(false);

@@ -55,7 +55,7 @@ public class BorrowCtrl extends BaseController{
      */
     @RequestMapping("/addBorrow")
     @ResponseBody
-    public JsonResult addBorrow(BorrowModel borrowModel){
+    public JsonResult addBorrow(BorrowModel borrowModel) throws Exception{
         try {
             borrowService.checkUserBorrowable(borrowModel,0);
             borrowService.checkBookBorrowable(borrowModel,0);//0代表借书

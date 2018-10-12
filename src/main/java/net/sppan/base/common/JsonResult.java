@@ -181,6 +181,22 @@ public class JsonResult implements Serializable {
 		this.status = status;
 	}
 
+	public int getBorrowStatus() {
+		return borrowStatus;
+	}
+
+	public void setBorrowStatus(int borrowStatus) {
+		this.borrowStatus = borrowStatus;
+	}
+
+	public boolean isSuccess() {
+		return success;
+	}
+
+	public void setSuccess(boolean success) {
+		this.success = success;
+	}
+
 	@Override
 	public String toString() {
 		return "JsonResult [code=" + code + ", message=" + message + ", data="

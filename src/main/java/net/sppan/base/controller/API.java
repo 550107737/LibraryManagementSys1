@@ -125,6 +125,7 @@ public class API extends BaseController {
             List<BookModel> dbBookModels=bookDao.findAllByInBoxAndCheckStatus(0,0);
 
             List<BookModel> diff=new ArrayList<BookModel>();
+            diff=getDifference(bookModels,dbBookModels);
             if(diff.size()>0){
                 jsonResult.setData(JsonUtil.list2json(diff));
             }else{
@@ -140,7 +141,6 @@ public class API extends BaseController {
             if(difference>0){//现有书籍比数据库里的多，代表还书
                 //还书
                 jsonResult.setBorrowStatus(1);
-                diff=getDifference(bookModels,dbBookModels);//第一个参数数量比第二个要大
                 for(BookModel bookModel:diff){
                     borrowModel.setBookRfid(bookModel.getBookRfid());
                     borrowCtrl.returnBorrow(borrowModel,0,"应有地点！");
@@ -148,7 +148,6 @@ public class API extends BaseController {
             }else{
                 //借书
                 jsonResult.setBorrowStatus(0);
-                diff=getDifference(dbBookModels,bookModels);
                 for(BookModel bookModel:diff){
                     borrowModel.setBookRfid(bookModel.getBookRfid());
                     borrowCtrl.addBorrow(borrowModel);
@@ -171,10 +170,15 @@ public class API extends BaseController {
     value为该元素出现的次数,接着把list2的所有元素也放到map里，如果已经存在则value加1，
     最后只要取出map里value为1的元素即可，
      */
-    private List<BookModel> getDifference(List<BookModel> bigList, List<BookModel> smallList) {
-        Map<BookModel,Integer> map = new HashMap<BookModel,Integer>(bigList.size()+smallList.size());
+    private List<BookModel> getDifference(List<BookModel> list1, List<BookModel> list2) {
+        Map<BookModel,Integer> map = new HashMap<BookModel,Integer>(list1.size()+list2.size());
         List<BookModel> diff = new ArrayList<BookModel>();
-
+        List<BookModel> bigList=list1;
+        List<BookModel> smallList=list2;
+        if(list1.size()<list2.size()){
+            bigList=list2;
+            smallList=list1;
+        }
         for (BookModel bookModel : bigList) {
             map.put(bookModel, 1);
         }

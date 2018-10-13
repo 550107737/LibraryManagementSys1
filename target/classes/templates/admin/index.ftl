@@ -127,6 +127,9 @@
                                 <li>
                                     <a class="J_menuItem" href="${ctx!}/changeRfidCtrl/index">更换rfid</a>
                                 </li>
+                                <li>
+                                    <a class="J_menuItem" href="${ctx!}/repairBookcaseCtrl/index">书柜报警记录</a>
+                                </li>
                             </ul>
                         </li>
                         <li>

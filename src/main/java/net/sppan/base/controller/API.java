@@ -9,6 +9,7 @@ import net.sppan.base.common.utils.EncryUtil;
 import net.sppan.base.common.utils.JsonUtil;
 import net.sppan.base.common.utils.MD5Utils;
 //import net.sppan.base.config.consts.LabConsts;
+import net.sppan.base.config.consts.LabConsts;
 import net.sppan.base.dao.BookDao;
 import net.sppan.base.entity.BookModel;
 import net.sppan.base.entity.BookcaseModel;
@@ -58,9 +59,9 @@ public class API extends BaseController {
         jsonResult.setRetry_after_seconds(0);
         try {
             //优先生成服务器token
-//            String serverAPIKey = CryptoUtil.md5(LabConsts.SECRET_KEY).concat(CryptoUtil.md5(param.getBookcaseSN())).
-//                    concat(date.getTime()).concat(CryptoUtil.md5(userId));
-//            jsonResult.setToken(serverAPIKey);
+           String serverAPIKey = CryptoUtil.md5(LabConsts.SECRET_KEY).concat(CryptoUtil.md5(param.getBookcaseSN())).
+                   concat(date.getTime()).concat(CryptoUtil.md5(userId));
+           jsonResult.setToken(serverAPIKey);
 
             // todo 参数校验,所有接口都要用
             String serverAPIKey1 = checkParam(param,userId);

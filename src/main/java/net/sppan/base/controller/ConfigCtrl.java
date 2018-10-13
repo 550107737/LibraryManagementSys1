@@ -13,12 +13,9 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/configCtrl")
-@SessionAttributes("EncryptKey")
 public class ConfigCtrl extends BaseController {
     @Autowired
     private ConfigService configService;
-
-    private String key=null;
 
     @RequestMapping(value = { "/", "/config" })
     public String index(ModelMap map) {
@@ -94,8 +91,6 @@ public class ConfigCtrl extends BaseController {
     public String edit(@PathVariable Integer id, ModelMap map) {
         ConfigModel configModel = configService.find(id);
         map.put("configModel", configModel);
-        key=RandomUtil.generateString(16);
-        map.addAttribute("EncryptKey",key);
         return "config/form";
     }
 }

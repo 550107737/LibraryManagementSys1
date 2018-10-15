@@ -54,13 +54,13 @@ public class API extends BaseController {
     public JsonResult login(ParamModel param,String userId) {
         Date date=new Date();
         JsonResult jsonResult=new JsonResult();
-        jsonResult.setApi_flag("summerdeer");
+        jsonResult.setApi_flag(LabConsts.API_FLAG);
         jsonResult.setServer_time(date.getTime());
         jsonResult.setRetry_after_seconds(0);
         try {
             //优先生成服务器token
            String serverAPIKey = CryptoUtil.md5(LabConsts.SECRET_KEY).concat(CryptoUtil.md5(param.getBookcaseSN())).
-                   concat(date.getTime()).concat(CryptoUtil.md5(userId));
+                   concat(String.valueOf(date.getTime())).concat(CryptoUtil.md5(userId));
            jsonResult.setToken(serverAPIKey);
 
             // todo 参数校验,所有接口都要用
@@ -106,7 +106,7 @@ public class API extends BaseController {
     public JsonResult borrowBook(ParamModel param, String userId, String jsonBookListStr) {
         Date date=new Date();
         JsonResult jsonResult=new JsonResult();
-        jsonResult.setApi_flag("summerdeer");
+        jsonResult.setApi_flag(LabConsts.API_FLAG);
         jsonResult.setServer_time(date.getTime());
         jsonResult.setRetry_after_seconds(0);
         try {
@@ -215,7 +215,7 @@ public class API extends BaseController {
     public JsonResult bookCheck(ParamModel param, String  gridsn, String rfids) {
         Date date=new Date();
         JsonResult jsonResult=new JsonResult();
-        jsonResult.setApi_flag("summerdeer");
+        jsonResult.setApi_flag(LabConsts.API_FLAG);
         jsonResult.setServer_time(date.getTime());
         jsonResult.setRetry_after_seconds(0);
         try {
@@ -279,7 +279,7 @@ public class API extends BaseController {
     public JsonResult doorOverTime(ParamModel param) {
         Date date=new Date();
         JsonResult jsonResult=new JsonResult();
-        jsonResult.setApi_flag("summerdeer");
+        jsonResult.setApi_flag(LabConsts.API_FLAG);
         jsonResult.setServer_time(new Date().getTime());
         jsonResult.setRetry_after_seconds(0);
         try {

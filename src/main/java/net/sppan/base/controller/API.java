@@ -12,7 +12,10 @@ import net.sppan.base.entity.*;
 import net.sppan.base.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -42,10 +45,11 @@ public class API extends BaseController {
      * @创建时间： 2018-10-11
      */
     @RequestMapping(value = {"/door/getDoorOpenStatus"})
-    public JsonResult login(ParamModel param,String userId) {
+    @ResponseBody
+    public JsonResult login(@ModelAttribute("param") ParamModel param, @RequestParam String userId) {
         Date date=new Date();
         JsonResult jsonResult=new JsonResult();
-        jsonResult.setApi_flag("summerdeer");
+        jsonResult.setApi_flag(LabConsts.API_FLAG);
         jsonResult.setServer_time(date.getTime()+"");
         jsonResult.setRetry_after_seconds(0);
         try {
@@ -93,10 +97,11 @@ public class API extends BaseController {
      * @创建时间： 2018-7-29
      */
     @RequestMapping(value = {"/door/reportDoorCloseStatus"})
-    public JsonResult borrowBook(ParamModel param, String userId, String jsonListStr) {
+    @ResponseBody
+    public JsonResult borrowBook(@ModelAttribute("param") ParamModel param, @RequestParam String userId, @RequestParam String jsonListStr) {
         Date date=new Date();
         JsonResult jsonResult=new JsonResult();
-        jsonResult.setApi_flag("summerdeer");
+        jsonResult.setApi_flag(LabConsts.API_FLAG);
         jsonResult.setServer_time(date.getTime()+"");
         jsonResult.setRetry_after_seconds(0);
         try {
@@ -270,10 +275,11 @@ public class API extends BaseController {
      * @创建时间： 2018-7-29
      */
     @RequestMapping(value = {"/door/reportGridInventoryData"})
-    public JsonResult bookCheck(ParamModel param, String jsonListStr) {
+    @ResponseBody
+    public JsonResult bookCheck(@ModelAttribute("param") ParamModel param, String jsonListStr) {
         Date date=new Date();
         JsonResult jsonResult=new JsonResult();
-        jsonResult.setApi_flag("summerdeer");
+        jsonResult.setApi_flag(LabConsts.API_FLAG);
         jsonResult.setServer_time(date.getTime()+"");
         jsonResult.setRetry_after_seconds(0);
         try {
@@ -332,10 +338,11 @@ public class API extends BaseController {
      * @创建时间： 2018-7-29
      */
     @RequestMapping(value = {"/door/sendAlarmData"})
-    public JsonResult doorOverTime(ParamModel param) {
+    @ResponseBody
+    public JsonResult doorOverTime(@ModelAttribute("param") ParamModel param) {
         Date date=new Date();
         JsonResult jsonResult=new JsonResult();
-        jsonResult.setApi_flag("summerdeer");
+        jsonResult.setApi_flag(LabConsts.API_FLAG);
         jsonResult.setServer_time(date.getTime()+"");
         jsonResult.setRetry_after_seconds(0);
         try {
@@ -374,7 +381,8 @@ public class API extends BaseController {
      * @创建时间： 2018-7-29
      */
     @RequestMapping(value = {"/malfunction"})
-    public JsonResult malfunction(String param) {
+    @ResponseBody
+    public JsonResult malfunction(@ModelAttribute("param") ParamModel param) {
         // todo 先放着，需求待确认
         try {
             //设置书柜故障

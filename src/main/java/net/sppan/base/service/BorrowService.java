@@ -34,7 +34,7 @@ public interface BorrowService extends IBaseService<BorrowModel, Integer> {
 	 * @param pageRequest
 	 * @return
 	 */
-	Page<BorrowModel> findAllByLike(String searchText, PageRequest pageRequest);
+	Page<BorrowModel> findAllByLike(String userId,String bookRfid, PageRequest pageRequest);
 
 	/**
 	 * @方法名: changeBookStatus

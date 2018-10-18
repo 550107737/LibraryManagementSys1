@@ -8,7 +8,10 @@ import net.sppan.base.entity.BooksCheckModel;
 import net.sppan.base.service.BooksCheckService;
 import net.sppan.base.service.ConfigService;
 import net.sppan.base.service.support.impl.BaseServiceImpl;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -26,6 +29,13 @@ public class BooksCheckServiceImpl extends BaseServiceImpl<BooksCheckModel, Inte
 		return this.booksCheckDao;
 	}
 
+	@Override
+	public Page<BooksCheckModel> findAllByLike(String bookRfid, PageRequest pageRequest) {
+        if(StringUtils.isBlank(bookRfid)){
+            bookRfid = "";
+        }
+		return booksCheckDao.findAllByBookRfidContaining(bookRfid,pageRequest);
+	}
 
 	@Override
 	public void saveOrUpdate(BooksCheckModel booksCheckModel) {

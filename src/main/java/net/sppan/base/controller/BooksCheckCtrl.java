@@ -78,9 +78,15 @@ public class BooksCheckCtrl extends BaseController {
      */
     @RequestMapping("/list")
     @ResponseBody
-    public Page<BooksCheckModel> list() {
-        Page<BooksCheckModel> page = booksCheckService.findAll(getPageRequest());
+    public Page<BooksCheckModel> list(
+            @RequestParam(value="bookRfid",required=false) String bookRfid
+    ) {
+        Page<BooksCheckModel> page = booksCheckService.findAllByLike(bookRfid,getPageRequest());
         return page;
+    }
+    @RequestMapping(value = "/search", method = RequestMethod.GET)
+    public String search( ModelMap map) {
+        return "bookscheck/searchForm";
     }
 
 

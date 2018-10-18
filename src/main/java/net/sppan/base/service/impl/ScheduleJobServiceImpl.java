@@ -44,7 +44,7 @@ public class ScheduleJobServiceImpl extends BaseServiceImpl<ScheduleJob, Integer
         return this.scheduleJobDao;
     }
 
-    public void initScheduleJob() {
+    public void initScheduleJob() throws Exception{
         List<ScheduleJob> scheduleJobList = scheduleJobDao.findAll();
         if (CollectionUtils.isEmpty(scheduleJobList)) {
             return;
@@ -63,19 +63,19 @@ public class ScheduleJobServiceImpl extends BaseServiceImpl<ScheduleJob, Integer
         }
     }
 
-    public void insert(ScheduleJobVo scheduleJobVo) {
+    public void insert(ScheduleJobVo scheduleJobVo) throws Exception{
         ScheduleJob scheduleJob = scheduleJobVo.getTargetObject(ScheduleJob.class);
         ScheduleUtils.createScheduleJob(scheduler, scheduleJob);
         save(scheduleJob);
     }
 
-    public void update(ScheduleJobVo scheduleJobVo) {
+    public void update(ScheduleJobVo scheduleJobVo) throws Exception{
         ScheduleJob scheduleJob = scheduleJobVo.getTargetObject(ScheduleJob.class);
         ScheduleUtils.updateScheduleJob(scheduler, scheduleJob);
         update(scheduleJob);
     }
 
-    public void delUpdate(ScheduleJobVo scheduleJobVo) {
+    public void delUpdate(ScheduleJobVo scheduleJobVo) throws Exception{
         ScheduleJob scheduleJob = scheduleJobVo.getTargetObject(ScheduleJob.class);
         //先删除
         ScheduleUtils.deleteScheduleJob(scheduler, scheduleJob.getJobName(), scheduleJob.getJobGroup());
@@ -85,7 +85,7 @@ public class ScheduleJobServiceImpl extends BaseServiceImpl<ScheduleJob, Integer
         update(scheduleJob);
     }
 
-    public void delete1(Integer scheduleJobId) {
+    public void delete1(Integer scheduleJobId)throws Exception {
         ScheduleJob scheduleJob = scheduleJobDao.findByScheduleJobId(scheduleJobId.longValue());
         //删除运行的任务
         ScheduleUtils.deleteScheduleJob(scheduler, scheduleJob.getJobName(), scheduleJob.getJobGroup());
@@ -93,19 +93,19 @@ public class ScheduleJobServiceImpl extends BaseServiceImpl<ScheduleJob, Integer
         scheduleJobDao.deleteByScheduleJobId(scheduleJobId.longValue());
     }
 
-    public void runOnce(Integer scheduleJobId) {
+    public void runOnce(Integer scheduleJobId) throws Exception{
         ScheduleJob scheduleJob = scheduleJobDao.findByScheduleJobId(scheduleJobId.longValue());
         ScheduleUtils.runOnce(scheduler, scheduleJob.getJobName(), scheduleJob.getJobGroup());
     }
 
-    public void pauseJob(Integer scheduleJobId) {
+    public void pauseJob(Integer scheduleJobId) throws Exception{
         ScheduleJob scheduleJob = scheduleJobDao.findByScheduleJobId(scheduleJobId.longValue());
         scheduleJob.setStatus("0");//设置状态为暂停
         ScheduleUtils.pauseJob(scheduler, scheduleJob.getJobName(), scheduleJob.getJobGroup());
         update(scheduleJob);
     }
 
-    public void resumeJob(Integer scheduleJobId) {
+    public void resumeJob(Integer scheduleJobId)throws Exception {
         ScheduleJob scheduleJob = scheduleJobDao.findByScheduleJobId(scheduleJobId.longValue());
         scheduleJob.setStatus("1");//设置状态为正常
         ScheduleUtils.resumeJob(scheduler, scheduleJob.getJobName(), scheduleJob.getJobGroup());

@@ -60,23 +60,24 @@
                                 我的用户信息
                             </a>
                         </li>
+
                         <li>
-                            <a class="J_menuItem" href="${ctx!}/bookCtrl/books">
+                            <a href="#">
                                 <i class="fa fa fa-cog"></i>
-                                书籍检索查询
+                                <span class="nav-label">借阅管理</span>
+                                <span class="fa arrow"></span>
                             </a>
-                        </li>
-                        <li>
-                            <a class="J_menuItem" href="${ctx!}/borrowCtrl/borrow_student">
-                                <i class="fa fa fa-cog"></i>
-                                我的当前借阅
-                            </a>
-                        </li>
-                        <li>
-                            <a class="J_menuItem" href="${ctx!}/borrowHistoryCtrl/borrowHistory_student">
-                                <i class="fa fa fa-cog"></i>
-                                我的借阅历史
-                            </a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a class="J_menuItem" href="${ctx!}/bookCtrl/books">书籍检索</a>
+                                </li>
+                                <li>
+                                    <a class="J_menuItem" href="${ctx!}/borrowCtrl/borrow_student">当前借阅</a>
+                                </li>
+                                <li>
+                                    <a class="J_menuItem" href="${ctx!}/borrowHistoryCtrl/borrowHistory_student">借阅历史</a>
+                                </li>
+                            </ul>
                         </li>
                     </@shiro.hasPermission>
 
@@ -113,23 +114,24 @@
                             </a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a class="J_menuItem" href="${ctx!}/bookCtrl/books">书籍查询</a>
+                                    <a class="J_menuItem" href="${ctx!}/bookCtrl/books">书籍管理</a>
                                 </li>
                                 <li>
                                     <a class="J_menuItem" href="${ctx!}/bookcaseCtrl/bookcase">书柜管理</a>
                                 </li>
                                 <li>
+                                    <a class="J_menuItem" href="${ctx!}/repairBookcaseCtrl/index">书柜报警记录</a>
+                                </li>
+                                <li>
                                     <a class="J_menuItem" href="${ctx!}/bookboxCtrl/bookbox">书箱管理</a>
                                 </li>
                                 <li>
-                                    <a class="J_menuItem" href="${ctx!}/brokenBookRecordCtrl/index">损坏登记</a>
+                                    <a class="J_menuItem" href="${ctx!}/brokenBookRecordCtrl/index">书籍损坏登记</a>
                                 </li>
                                 <li>
                                     <a class="J_menuItem" href="${ctx!}/changeRfidCtrl/index">更换rfid</a>
                                 </li>
-                                <li>
-                                    <a class="J_menuItem" href="${ctx!}/repairBookcaseCtrl/index">书柜报警记录</a>
-                                </li>
+
                             </ul>
                         </li>
                         <li>
@@ -140,13 +142,13 @@
                             </a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a class="J_menuItem" href="${ctx!}/borrowCtrl/borrow">当前借阅列表</a>
+                                    <a class="J_menuItem" href="${ctx!}/booksCheckCtrl/booksCheck">图书盘点</a>
                                 </li>
                                 <li>
-                                    <a class="J_menuItem" href="${ctx!}/borrowHistoryCtrl/borrowHistory">借阅历史列表</a>
+                                    <a class="J_menuItem" href="${ctx!}/borrowCtrl/borrow">当前借阅</a>
                                 </li>
                                 <li>
-                                    <a class="J_menuItem" href="${ctx!}/booksCheckCtrl/booksCheck">书籍盘点结果</a>
+                                    <a class="J_menuItem" href="${ctx!}/borrowHistoryCtrl/borrowHistory">历史借阅</a>
                                 </li>
                             </ul>
                         </li>
@@ -162,6 +164,7 @@
                                 </li>
                             </ul>
                         </li>
+
                     </@shiro.hasPermission>
 
 

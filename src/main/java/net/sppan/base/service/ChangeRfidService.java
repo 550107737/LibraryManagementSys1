@@ -31,7 +31,7 @@ public interface ChangeRfidService extends IBaseService<ChangeRfidModel, Integer
 	 * @param pageRequest
 	 * @return
 	 */
-	Page<ChangeRfidModel> findAllByLike(String searchText, PageRequest pageRequest);
+	Page<ChangeRfidModel> findAllByLike(String oldRfid,String newRfid, PageRequest pageRequest);
 
 	List<ChangeRfidModel> findAllByIsFinish(Integer isFinish);
 

@@ -69,11 +69,14 @@ public class ChangeRfidServiceImpl extends BaseServiceImpl<ChangeRfidModel, Inte
 
 
 	@Override
-	public Page<ChangeRfidModel> findAllByLike(String searchText, PageRequest pageRequest) {
-		if(StringUtils.isBlank(searchText)){
-			searchText = "";
+	public Page<ChangeRfidModel> findAllByLike(String oldRfid,String newRfid, PageRequest pageRequest) {
+		if(StringUtils.isBlank(oldRfid)){
+			oldRfid = "";
 		}
-		return changeRfidDao.findAllByOldRfidContaining(searchText,pageRequest);
+		if(StringUtils.isBlank(newRfid)){
+			newRfid = "";
+		}
+		return changeRfidDao.findAllByOldRfidContainingAndNewRfidContaining(oldRfid,newRfid,pageRequest);
 	}
 
 	@Override

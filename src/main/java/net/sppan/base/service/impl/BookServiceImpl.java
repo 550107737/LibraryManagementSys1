@@ -82,14 +82,14 @@ public class BookServiceImpl extends BaseServiceImpl<BookModel, Integer> impleme
 
 	@Override
 	public void changeBoxNum(Integer boxId) {
-		BookboxModel bookboxModel=bookboxService.findByBoxId(boxId);
+		BookboxModel bookboxModel=bookboxService.find(boxId);
 		bookboxModel.setBoxNum(bookboxModel.getBoxNum()+1);
 		bookboxService.saveOrUpdate(bookboxModel);
 	}
 
 	@Override
 	public void checkBoxAddable(Integer boxId) throws Exception{
-		BookboxModel bookboxModel=bookboxService.findByBoxId(boxId);
+		BookboxModel bookboxModel=bookboxService.find(boxId);
 		ConfigModel configModel=configService.findByConfigId(1);
 		if(bookboxModel.getBoxNum()>=configModel.getBoxMax()){
 			throw new Exception("该书箱已满！");

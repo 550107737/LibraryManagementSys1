@@ -86,11 +86,14 @@ public class BorrowServiceImpl extends BaseServiceImpl<BorrowModel, Integer> imp
 
 
 	@Override
-	public Page<BorrowModel> findAllByLike(String searchText, PageRequest pageRequest) {
-		if(StringUtils.isBlank(searchText)){
-			searchText = "";
+	public Page<BorrowModel> findAllByLike(String userId,String bookRfid, PageRequest pageRequest) {
+		if(StringUtils.isBlank(userId)){
+			userId = "";
 		}
-		return borrowDao.findAllByUserIdContaining(searchText,pageRequest);
+		if(StringUtils.isBlank(bookRfid)){
+			bookRfid = "";
+		}
+		return borrowDao.findAllByUserIdContainingAndBookRfidContaining(userId,bookRfid,pageRequest);
 	}
 
 
@@ -184,11 +187,11 @@ public class BorrowServiceImpl extends BaseServiceImpl<BorrowModel, Integer> imp
 		int a=0;BookModel bookModel=null;BookboxModel bookboxModel=null;
 		if(type==0){
 			bookModel=bookService.findByBookRfid(borrowModel.getBookRfid());
-			bookboxModel=bookboxService.findByBoxId(bookModel.getBoxId());
+			bookboxModel=bookboxService.find(bookModel.getBoxId());
 			a=1;
 		}
 		if(type==2){
-			bookboxModel=bookboxService.findByBoxId(borrowModel.getActualBoxId());
+			bookboxModel=bookboxService.find(borrowModel.getActualBoxId());
 			a=-1;
 		}
 		if(bookboxModel==null){//若type不为0和2，必定null，不需要修改
@@ -250,7 +253,7 @@ public class BorrowServiceImpl extends BaseServiceImpl<BorrowModel, Integer> imp
 	@Override
 	public void checkBoxReturnable(BorrowModel borrowModel) throws Exception{
 		ConfigModel configModel=configService.find(1);
-		BookboxModel bookboxModel=bookboxService.findByBoxId(borrowModel.getActualBoxId());
+		BookboxModel bookboxModel=bookboxService.find(borrowModel.getActualBoxId());
 		if(bookboxModel.getBoxNum()+1>configModel.getBoxMax()){
 			throw new Exception("超过该书箱最大容纳数量！");
 		}

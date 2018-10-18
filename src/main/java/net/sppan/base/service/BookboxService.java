@@ -6,14 +6,16 @@ import net.sppan.base.service.support.IBaseService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 
+import java.util.List;
+
 public interface BookboxService extends IBaseService<BookboxModel, Integer> {
 
 	/**
-	 * 根据id查找
+	 * 根据书柜id查找列表
 	 * @param id
 	 * @return
 	 */
-	BookboxModel findByBoxId(Integer id);
+	List<BookboxModel> findByBookcaseId(Integer id);
 
 	/**
 	 * 增加或者修改书箱

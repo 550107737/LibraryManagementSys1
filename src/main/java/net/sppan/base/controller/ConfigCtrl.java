@@ -1,8 +1,19 @@
 package net.sppan.base.controller;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import net.sppan.base.common.JsonResult;
+import net.sppan.base.common.utils.CryptoUtil;
+import net.sppan.base.common.utils.JsonUtil;
 import net.sppan.base.common.utils.RandomUtil;
+import net.sppan.base.config.consts.LabConsts;
+import net.sppan.base.entity.BookModel;
+import net.sppan.base.entity.BookboxModel;
 import net.sppan.base.entity.ConfigModel;
+import net.sppan.base.entity.ParamModel;
+import net.sppan.base.service.BookService;
+import net.sppan.base.service.BookboxService;
 import net.sppan.base.service.ConfigService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.web.ServerProperties;
@@ -11,14 +22,45 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 @Controller
 @RequestMapping("/configCtrl")
 public class ConfigCtrl extends BaseController {
     @Autowired
     private ConfigService configService;
-
+    @Autowired
+    private BookboxService bookboxService;
+    @Autowired
+    private BookService bookService;
+    @Autowired
+    private API api;
     @RequestMapping(value = { "/", "/config" })
     public String index(ModelMap map) {
+
+        /*
+        String jsonListStr="{\"20000007\":\"00000002\",\"20000008\":\"00000008\",\"20000009\":\"00000005,00000006,00000007\"}";
+        ParamModel paramModel=new ParamModel();
+        Date date=new Date();
+        paramModel.setTime(date.getTime()+"");
+        paramModel.setBookcaseSN("10000003");
+        String serverAPIKey = CryptoUtil.md5(LabConsts.SECRET_KEY).concat(CryptoUtil.md5(paramModel.getBookcaseSN())).
+                concat(date.getTime()+"").concat(CryptoUtil.md5("admin"));
+        paramModel.setToken(serverAPIKey);
+        System.out.println(serverAPIKey);
+        api.borrowBook(paramModel,"admin",jsonListStr);
+        */
+        ParamModel paramModel=new ParamModel();
+        Date date=new Date();
+        paramModel.setTime(date.getTime()+"");
+        paramModel.setBookcaseSN("10000003");
+        String serverAPIKey = CryptoUtil.md5(LabConsts.SECRET_KEY).concat(CryptoUtil.md5(paramModel.getBookcaseSN())).
+                concat(date.getTime()+"").concat(CryptoUtil.md5(""));
+        paramModel.setToken(serverAPIKey);
+        api.doorOverTime(paramModel);
+
         return "config/config";
     }
 

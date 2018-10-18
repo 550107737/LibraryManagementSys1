@@ -33,12 +33,17 @@ public class ScheduleJobInit {
         if (LOG.isInfoEnabled()) {
             LOG.info("init");
         }
-
-        scheduleJobService.initScheduleJob();
-
-        if (LOG.isInfoEnabled()) {
-            LOG.info("end");
+        try{
+            scheduleJobService.initScheduleJob();
+            if (LOG.isInfoEnabled()) {
+                LOG.info("end");
+            }
+        }catch(Exception e){
+            LOG.info("error",e);
         }
+
+
+
     }
 
 }

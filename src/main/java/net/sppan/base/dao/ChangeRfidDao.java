@@ -14,7 +14,7 @@ public interface ChangeRfidDao extends IBaseDao<ChangeRfidModel, Integer> {
 
 	ChangeRfidModel findByOldRfid(String txt);
 
-	Page<ChangeRfidModel> findAllByOldRfidContaining(String searchText, Pageable pageable);
+	Page<ChangeRfidModel> findAllByOldRfidContainingAndNewRfidContaining(String oldRfid,String newRfid, Pageable pageable);
 
 	List<ChangeRfidModel> findAllByIsFinish(Integer isFinish);
 

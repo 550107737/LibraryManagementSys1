@@ -33,9 +33,10 @@
                     </div>
                     <div class="ibox-content">
                         <p>
-                        	<@shiro.hasPermission name="system:bookcase:index">
+                        	<@shiro.hasPermission name="system:borrow:bothadmin">
                         		<button class="btn btn-success " type="button" onclick="add();"><i class="fa fa-plus"></i>&nbsp;添加</button>
-                        	</@shiro.hasPermission>
+                        		<button class="btn btn-success " type="button" onclick="search();"><i class="fa fa-plus"></i>&nbsp;查询</button>
+							</@shiro.hasPermission>
                         </p>
                         <hr>
                         <div class="row row-lg">
@@ -44,6 +45,8 @@
 		                        <div class="example-wrap">
 		                            <div class="example">
 		                            	<table id="table_list"></table>
+                                        <input type="hidden" id="oldRfid" name="oldRfid" >
+                                        <input type="hidden" id="newRfid" name="newRfid" >
 		                            </div>
 		                        </div>
 		                        <!-- End Example Card View -->
@@ -94,7 +97,7 @@
 			    //记录数可选列表
 			    pageList: [5, 10, 15, 20, 25],
 			    //是否启用查询
-			    search: true,
+			    search: false,
 			    //是否启用详细信息视图
 			    detailView:false,
 			    detailFormatter:detailFormatter,
@@ -104,7 +107,18 @@
 			    sidePagination: "server",
 			    //设置为undefined可以获取pageNumber，pageSize，searchText，sortName，sortOrder
 			    //设置为limit可以获取limit, offset, search, sort, order
-			    queryParamsType: "undefined",
+                queryParams : function (params) {
+                    //这里的键的名字和控制器的变量名必须一直，这边改动，控制器也需要改成一样的
+                    var temp = {
+                        pageSize: params.limit,                         //页面大小
+                        pageNumber: (params.offset / params.limit) + 1,   //页码
+                        sortName: params.sort,      //排序列名
+                        sortOrder: params.order, //排位命令（desc，asc）
+                        oldRfid:$("#oldRfid").val(),
+                        newRfid:$("#newRfid").val()
+                    };
+                    return temp;
+                },
 			    //json数据解析
 			    responseHandler: function(res) {
 			        return {
@@ -203,7 +217,19 @@
     	    	});
        		});
         }
-
+        function search(){
+            layer.open({
+                type: 2,
+                title: '查询',
+                shadeClose: true,
+                shade: false,
+                area: ['893px', '600px'],
+                content: '${ctx!}/changeRfidCtrl/search',
+                end: function(index){
+                    $('#table_list').bootstrapTable("refresh");
+                }
+            });
+        }
         function detailFormatter(index, row) {
 	        var html = [];
 	        html.push('<p><b>描述:</b> ' + row.description + '</p>');

@@ -35,6 +35,8 @@ public interface BookDao extends IBaseDao<BookModel, Integer> {
 
 	Page<BookModel> findAllByRepayTimeBefore(Date date, Pageable pageable);
 
+	List<BookModel> findAllByBookcaseIdAndBooksStatus(Integer bookcaseId,Integer booksStatus);
+
 	@Query(nativeQuery = true,value ="SELECT COUNT(DISTINCT user_id) FROM borrow")
 	Integer countUserIdDistinctFromBorrow();
 

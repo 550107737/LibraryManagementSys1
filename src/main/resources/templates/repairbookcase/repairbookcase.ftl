@@ -156,8 +156,10 @@
 			        title: "操作",
 			        field: "empty",
                     formatter: function (value, row, index) {
-                    	var operateHtml = '<@shiro.hasPermission name="system:borrow:bothadmin"><button class="btn btn-primary btn-xs" type="button" onclick="edit(\''+row.repairId+'\')"><i class="fa fa-edit"></i>&nbsp;修改</button> &nbsp;</@shiro.hasPermission>';
+                    	var operateHtml ="";
+                        operateHtml=operateHtml+'<@shiro.hasPermission name="system:borrow:bothadmin"><button class="btn btn-primary btn-xs" type="button" onclick="edit(\''+row.repairId+'\')"><i class="fa fa-edit"></i>&nbsp;修改</button> &nbsp;</@shiro.hasPermission>';
                         operateHtml = operateHtml + '<@shiro.hasPermission name="system:borrow:bothadmin"><button class="btn btn-danger btn-xs" type="button" onclick="del(\''+row.repairId+'\')"><i class="fa fa-remove"></i>&nbsp;删除</button> &nbsp;</@shiro.hasPermission>';
+                        operateHtml = operateHtml + '<@shiro.hasPermission name="system:borrow:bothadmin"><button class="btn btn-info btn-xs" type="button" onclick="repair(\''+row.repairId+'\')"><i class="fa fa-remove"></i>&nbsp;人工修复</button> &nbsp;</@shiro.hasPermission>';
                         return operateHtml;
                     }
 			    }]
@@ -197,6 +199,21 @@
                     type: "POST",
                     dataType: "json",
                     url: "${ctx!}/repairBookcaseCtrl/del/" + id,
+                    success: function(msg){
+                        layer.msg(msg.message, {time: 2000},function(){
+                            $('#table_list').bootstrapTable("refresh");
+                            layer.close(index);
+                        });
+                    }
+                });
+            });
+        }
+        function repair(id){
+            layer.confirm('确定已经修复故障吗?', {icon: 3, title:'提示'}, function(index){
+                $.ajax({
+                    type: "POST",
+                    dataType: "json",
+                    url: "${ctx!}/repairBookcaseCtrl/repair/" + id,
                     success: function(msg){
                         layer.msg(msg.message, {time: 2000},function(){
                             $('#table_list').bootstrapTable("refresh");

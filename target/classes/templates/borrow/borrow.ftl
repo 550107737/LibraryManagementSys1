@@ -33,11 +33,10 @@
                     </div>
                     <div class="ibox-content">
                         <p>
-                        	<@shiro.hasPermission name="system:borrow:add">
+                        	<@shiro.hasPermission name="system:borrow:bothadmin">
                         		<button class="btn btn-success " type="button" onclick="add();"><i class="fa fa-plus"></i>&nbsp;添加</button>
-                        	</@shiro.hasPermission>
-                            <@shiro.hasPermission name="system:borrow:add">
                                 <button class="btn btn-success " type="button" onclick="return1();"><i class="fa fa-plus"></i>&nbsp;还书</button>
+                                <button class="btn btn-success " type="button" onclick="search();"><i class="fa fa-plus"></i>&nbsp;查询</button>
                             </@shiro.hasPermission>
 
                         </p>
@@ -48,6 +47,8 @@
 		                        <div class="example-wrap">
 		                            <div class="example">
 		                            	<table id="table_list"></table>
+                                        <input type="hidden" id="bookRfid" name="bookRfid" >
+                                        <input type="hidden" id="userId" name="userId" >
 		                            </div>
 		                        </div>
 		                        <!-- End Example Card View -->
@@ -108,7 +109,18 @@
 			    sidePagination: "server",
 			    //设置为undefined可以获取pageNumber，pageSize，searchText，sortName，sortOrder
 			    //设置为limit可以获取limit, offset, search, sort, order
-			    queryParamsType: "undefined",
+                queryParams : function (params) {
+                    //这里的键的名字和控制器的变量名必须一直，这边改动，控制器也需要改成一样的
+                    var temp = {
+                        pageSize: params.limit,                         //页面大小
+                        pageNumber: (params.offset / params.limit) + 1,   //页码
+                        sortName: params.sort,      //排序列名
+                        sortOrder: params.order, //排位命令（desc，asc）
+                        bookRfid:$("#bookRfid").val(),
+                        userId:$("#userId").val()
+                    };
+                    return temp;
+                },
 			    //json数据解析
 			    responseHandler: function(res) {
 			        return {
@@ -214,6 +226,19 @@
                 shade: false,
                 area: ['893px', '600px'],
                 content: '${ctx!}/borrowCtrl/add',
+                end: function(index){
+                    $('#table_list').bootstrapTable("refresh");
+                }
+            });
+        }
+        function search(){
+            layer.open({
+                type: 2,
+                title: '查询',
+                shadeClose: true,
+                shade: false,
+                area: ['893px', '600px'],
+                content: '${ctx!}/borrowCtrl/search',
                 end: function(index){
                     $('#table_list').bootstrapTable("refresh");
                 }

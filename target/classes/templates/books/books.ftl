@@ -33,10 +33,8 @@
                     </div>
                     <div class="ibox-content">
                         <p>
-                        	<@shiro.hasPermission name="system:book:add">
+                        	<@shiro.hasPermission name="system:borrow:bothadmin">
                         		<button class="btn btn-success " type="button" onclick="add();"><i class="fa fa-plus"></i>&nbsp;添加</button>
-                        	</@shiro.hasPermission>
-							<@shiro.hasPermission name="system:book:index">
                         		<button class="btn btn-success " type="button" onclick="search();"><i class="fa fa-plus"></i>&nbsp;查询书籍</button>
 							</@shiro.hasPermission>
                         </p>

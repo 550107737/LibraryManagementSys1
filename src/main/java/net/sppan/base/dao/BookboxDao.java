@@ -6,10 +6,12 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface BookboxDao extends IBaseDao<BookboxModel, Integer> {
 
-	BookboxModel findByBoxId(Integer username);
+	List<BookboxModel> findByBookcaseId(Integer id);
 
 	Page<BookboxModel> findAllByLocationContaining(String searchText, Pageable pageable);
 

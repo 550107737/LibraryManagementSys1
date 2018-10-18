@@ -14,7 +14,7 @@ public interface ScheduleJobService extends IBaseService<ScheduleJob,Integer> {
     /**
      * 初始化定时任务
      */
-    public void initScheduleJob();
+    public void initScheduleJob() throws Exception;
 
     /**
      * 新增
@@ -22,28 +22,28 @@ public interface ScheduleJobService extends IBaseService<ScheduleJob,Integer> {
      * @param scheduleJobVo
      * @return
      */
-    public void insert(ScheduleJobVo scheduleJobVo);
+    public void insert(ScheduleJobVo scheduleJobVo)throws Exception;
 
     /**
      * 直接修改 只能修改运行的时间，参数、同异步等无法修改
      * 
      * @param scheduleJobVo
      */
-    public void update(ScheduleJobVo scheduleJobVo);
+    public void update(ScheduleJobVo scheduleJobVo)throws Exception;
 
     /**
      * 删除重新创建方式
      * 
      * @param scheduleJobVo
      */
-    public void delUpdate(ScheduleJobVo scheduleJobVo);
+    public void delUpdate(ScheduleJobVo scheduleJobVo)throws Exception;
 
     /**
      * 删除
      * 
      * @param scheduleJobId
      */
-    public void delete1(Integer scheduleJobId);
+    public void delete1(Integer scheduleJobId)throws Exception;
 
     /**
      * 运行一次任务
@@ -51,7 +51,7 @@ public interface ScheduleJobService extends IBaseService<ScheduleJob,Integer> {
      * @param scheduleJobId the schedule job id
      * @return
      */
-    public void runOnce(Integer scheduleJobId);
+    public void runOnce(Integer scheduleJobId)throws Exception;
 
     /**
      * 暂停任务
@@ -59,7 +59,7 @@ public interface ScheduleJobService extends IBaseService<ScheduleJob,Integer> {
      * @param scheduleJobId the schedule job id
      * @return
      */
-    public void pauseJob(Integer scheduleJobId);
+    public void pauseJob(Integer scheduleJobId)throws Exception;
 
     /**
      * 恢复任务
@@ -67,7 +67,7 @@ public interface ScheduleJobService extends IBaseService<ScheduleJob,Integer> {
      * @param scheduleJobId the schedule job id
      * @return
      */
-    public void resumeJob(Integer scheduleJobId);
+    public void resumeJob(Integer scheduleJobId)throws Exception;
 
     /**
      * 获取任务对象

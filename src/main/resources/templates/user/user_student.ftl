@@ -195,6 +195,8 @@
                     field: "empty",
                     formatter: function (value, row, index) {
                         var operateHtml="" ;
+                        operateHtml = operateHtml + '<@shiro.hasPermission name="system:borrow:studentonly"><button class="btn btn-primary btn-xs" type="button" onclick="updatePwd()"><i class="fa fa-arrows"></i>&nbsp;修改密码</button></@shiro.hasPermission>';
+
                         if(row.overdueTotalAmount>0){
                             operateHtml = operateHtml + '<@shiro.hasPermission name="system:borrow:studentonly"><button class="btn btn-info btn-xs" type="button" onclick="selfrepay(\''+row.id+'\')"><i class="fa fa-arrows"></i>&nbsp;自助还款</button></@shiro.hasPermission>';
                         }
@@ -219,6 +221,19 @@
                 content: '${ctx!}/userCtrl/selfrepay/' + id,
                 end: function(index){
                     $('#table_list').bootstrapTable("refresh");
+                }
+            });
+        }
+        function updatePwd(){
+            layer.open({
+                type: 2,
+                title: '修改密码',
+                shadeClose: true,
+                shade: false,
+                area: ['893px', '600px'],
+                content: '${ctx!}/userCtrl/updatePwd',
+                end: function(index){
+                    window.location.reload();
                 }
             });
         }

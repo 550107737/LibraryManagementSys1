@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
+
 @Controller
 @RequestMapping("/repairBookcaseCtrl")
 public class RepairBookcaseCtrl extends BaseController {
@@ -90,5 +92,20 @@ public class RepairBookcaseCtrl extends BaseController {
         RepairBookcaseModel repairBookcaseModel = repairBookcaseService.find(id);
         map.put("repairBookcaseModel", repairBookcaseModel);
         return "repairbookcase/form";
+    }
+
+    @RequestMapping(value = "/repair/{id}")
+    @ResponseBody
+    public JsonResult repair(@PathVariable Integer id) {
+        try {
+            RepairBookcaseModel repairBookcaseModel=repairBookcaseService.find(id);
+            repairBookcaseModel.setRepairTime(new Date());
+            repairBookcaseModel.setIsRepair(0);
+            repairBookcaseService.saveOrUpdate(repairBookcaseModel);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return JsonResult.failure(e.getMessage());
+        }
+        return JsonResult.success();
     }
 }

@@ -23,12 +23,13 @@ public class JsonResult implements Serializable {
 	//4个必须参数
 	private String api_flag;
 	private int retry_after_seconds;
-	private long server_time;
+	private String server_time;
 	private boolean result;
+	private Object borrowBooksData;
+	private Object returnBooksData;
 
 	private String token;
-	private int status;
-	private int borrowStatus;//0还书1借书
+
 
 	public JsonResult(){}
 
@@ -149,11 +150,11 @@ public class JsonResult implements Serializable {
 		this.retry_after_seconds = retry_after_seconds;
 	}
 
-	public long getServer_time() {
+	public String getServer_time() {
 		return server_time;
 	}
 
-	public void setServer_time(long server_time) {
+	public void setServer_time(String server_time) {
 		this.server_time = server_time;
 	}
 
@@ -173,28 +174,28 @@ public class JsonResult implements Serializable {
 		this.token = token;
 	}
 
-	public int getStatus() {
-		return status;
-	}
-
-	public void setStatus(int status) {
-		this.status = status;
-	}
-
-	public int getBorrowStatus() {
-		return borrowStatus;
-	}
-
-	public void setBorrowStatus(int borrowStatus) {
-		this.borrowStatus = borrowStatus;
-	}
-
 	public boolean isSuccess() {
 		return success;
 	}
 
 	public void setSuccess(boolean success) {
 		this.success = success;
+	}
+
+	public Object getBorrowBooksData() {
+		return borrowBooksData;
+	}
+
+	public void setBorrowBooksData(Object borrowBooksData) {
+		this.borrowBooksData = borrowBooksData;
+	}
+
+	public Object getReturnBooksData() {
+		return returnBooksData;
+	}
+
+	public void setReturnBooksData(Object returnBooksData) {
+		this.returnBooksData = returnBooksData;
 	}
 
 	@Override

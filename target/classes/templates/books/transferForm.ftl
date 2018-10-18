@@ -30,7 +30,7 @@
                         <form class="form-horizontal m-t" id="frm" method="post" action="${ctx!}/bookCtrl/transfer">
                         	<input type="hidden" id="booksId" name="booksId" value="${bookModel.booksId}">
                             <div class="form-group">
-                                <label class="col-sm-3 control-label">当前所在书柜：</label>
+                                <label class="col-sm-3 control-label">欲导入书柜：</label>
                                 <div class="col-sm-8">
                                     <select name="bookcaseId" class="form-control">
                                 		<#list bookcaseModels as r>
@@ -42,7 +42,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label">当前所在书箱：</label>
+                                <label class="col-sm-3 control-label">欲导入书箱：</label>
                                 <div class="col-sm-8">
                                     <select id="boxId" name="boxId" class="form-control">
                                         <option value="1" >1层</option>

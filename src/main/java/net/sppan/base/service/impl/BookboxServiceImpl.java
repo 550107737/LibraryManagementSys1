@@ -16,6 +16,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class BookboxServiceImpl extends BaseServiceImpl<BookboxModel, Integer> implements BookboxService {
@@ -31,8 +32,8 @@ public class BookboxServiceImpl extends BaseServiceImpl<BookboxModel, Integer> i
 	}
 
 	@Override
-	public BookboxModel findByBoxId(Integer id) {
-		return bookboxDao.findByBoxId(id);
+	public List<BookboxModel> findByBookcaseId(Integer id) {
+		return bookboxDao.findByBookcaseId(id);
 	}
 
 	@Override

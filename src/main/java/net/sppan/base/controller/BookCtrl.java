@@ -164,10 +164,12 @@ public class BookCtrl extends BaseController {
     public String edit(@PathVariable Integer id, ModelMap map) {
         BookModel bookModel = bookService.find(id);
         map.put("bookModel", bookModel);
-        List<BookcaseModel> bookcaseModels=bookcaseService.findAll();
-        map.put("bookcaseModels",bookcaseModels);
-        BookboxModel bookboxModel=bookboxService.findByBoxId(bookModel.getBoxId());
-        map.put("bookboxModel",bookboxModel);
+        if(bookModel.getInBox()==0){
+            List<BookcaseModel> bookcaseModels=bookcaseService.findAll();
+            map.put("bookcaseModels",bookcaseModels);
+            BookboxModel bookboxModel=bookboxService.find(bookModel.getBoxId());
+            map.put("bookboxModel",bookboxModel);
+        }
         return "books/editForm";
     }
     /**
@@ -187,8 +189,6 @@ public class BookCtrl extends BaseController {
         map.put("bookModel", bookModel);
         List<BookcaseModel> bookcaseModels=bookcaseService.findAll();
         map.put("bookcaseModels",bookcaseModels);
-        BookboxModel bookboxModel=bookboxService.findByBoxId(bookModel.getBoxId());
-        map.put("bookboxModel",bookboxModel);
         return "books/transferForm";
     }
     @RequestMapping(value = "/transfer", method = RequestMethod.POST)
@@ -253,4 +253,7 @@ public class BookCtrl extends BaseController {
         }
         return JsonResult.success(list);
     }
+
+
+
 }

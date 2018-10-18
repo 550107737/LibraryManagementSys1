@@ -99,11 +99,23 @@ public class ChangeRfidCtrl extends BaseController {
     @RequestMapping("/list")
     @ResponseBody
     public Page<ChangeRfidModel> list(
-            @RequestParam(value="searchText",required=false) String searchText
+            @RequestParam(value="oldRfid",required=false) String oldRfid,
+            @RequestParam(value="newRfid",required=false) String newRfid
     ) {
-        Page<ChangeRfidModel> page = changeRfidService.findAllByLike(searchText, getPageRequest());
+        Page<ChangeRfidModel> page = changeRfidService.findAllByLike(oldRfid,newRfid, getPageRequest());
         return page;
     }
+    /**
+     * @方法名: search
+     * @功能描述: 带条件查询
+     * @创建人: 黄梓莘
+     * @创建时间： 2018-10-18
+     */
+    @RequestMapping(value = "/search", method = RequestMethod.GET)
+    public String search( ModelMap map) {
+        return "changerfid/searchForm";
+    }
+
 
     /**
      * @方法名: add

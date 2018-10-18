@@ -38,14 +38,14 @@ public class ScheduleUtils {
      * @param jobGroup the job group
      * @return cron trigger
      */
-    public static CronTrigger getCronTrigger(Scheduler scheduler, String jobName, String jobGroup) {
+    public static CronTrigger getCronTrigger(Scheduler scheduler, String jobName, String jobGroup) throws Exception{
 
         try {
             TriggerKey triggerKey = TriggerKey.triggerKey(jobName, jobGroup);
             return (CronTrigger) scheduler.getTrigger(triggerKey);
         } catch (SchedulerException e) {
             LOG.error("获取定时任务CronTrigger出现异常", e);
-            throw new ScheduleException("获取定时任务CronTrigger出现异常");
+            throw new Exception("获取定时任务CronTrigger出现异常");
         }
     }
 
@@ -55,7 +55,7 @@ public class ScheduleUtils {
      * @param scheduler the scheduler
      * @param scheduleJob the schedule job
      */
-    public static void createScheduleJob(Scheduler scheduler, ScheduleJob scheduleJob) {
+    public static void createScheduleJob(Scheduler scheduler, ScheduleJob scheduleJob) throws Exception{
         createScheduleJob(scheduler,
                 scheduleJob.getJobName(),
                 scheduleJob.getJobGroup(),
@@ -76,7 +76,7 @@ public class ScheduleUtils {
      * @param param the param
      */
     public static void createScheduleJob(Scheduler scheduler, String jobName, String jobGroup,
-                                         String cronExpression, boolean isSync, String url,Object param) {
+                                         String cronExpression, boolean isSync, String url,Object param) throws Exception{
         //同步或异步
         //Class jobClass = isSync ? AsyncJobFactory.class : SyncJobFactory.class;
         try {
@@ -101,7 +101,7 @@ public class ScheduleUtils {
             scheduler.scheduleJob(jobDetail, trigger);
         } catch (Exception e) {
             LOG.error("创建定时任务失败", e);
-            throw new ScheduleException("创建定时任务失败");
+            throw new Exception("创建定时任务失败");
         }
     }
 
@@ -112,13 +112,13 @@ public class ScheduleUtils {
      * @param jobName
      * @param jobGroup
      */
-    public static void runOnce(Scheduler scheduler, String jobName, String jobGroup) {
+    public static void runOnce(Scheduler scheduler, String jobName, String jobGroup)throws Exception {
         JobKey jobKey = JobKey.jobKey(jobName, jobGroup);
         try {
             scheduler.triggerJob(jobKey);
         } catch (SchedulerException e) {
             LOG.error("运行一次定时任务失败", e);
-            throw new ScheduleException("运行一次定时任务失败");
+            throw new Exception("运行一次定时任务失败");
         }
     }
 
@@ -129,14 +129,14 @@ public class ScheduleUtils {
      * @param jobName
      * @param jobGroup
      */
-    public static void pauseJob(Scheduler scheduler, String jobName, String jobGroup) {
+    public static void pauseJob(Scheduler scheduler, String jobName, String jobGroup)throws Exception {
 
         JobKey jobKey = JobKey.jobKey(jobName, jobGroup);
         try {
             scheduler.pauseJob(jobKey);
         } catch (SchedulerException e) {
             LOG.error("暂停定时任务失败", e);
-            throw new ScheduleException("暂停定时任务失败");
+            throw new Exception("暂停定时任务失败");
         }
     }
 
@@ -147,14 +147,14 @@ public class ScheduleUtils {
      * @param jobName
      * @param jobGroup
      */
-    public static void resumeJob(Scheduler scheduler, String jobName, String jobGroup) {
+    public static void resumeJob(Scheduler scheduler, String jobName, String jobGroup) throws Exception{
 
         JobKey jobKey = JobKey.jobKey(jobName, jobGroup);
         try {
             scheduler.resumeJob(jobKey);
         } catch (SchedulerException e) {
             LOG.error("恢复定时任务失败", e);
-            throw new ScheduleException("恢复定时任务失败");
+            throw new Exception("恢复定时任务失败");
         }
     }
 
@@ -176,7 +176,7 @@ public class ScheduleUtils {
      * @param scheduler the scheduler
      * @param scheduleJob the schedule job
      */
-    public static void updateScheduleJob(Scheduler scheduler, ScheduleJob scheduleJob) {
+    public static void updateScheduleJob(Scheduler scheduler, ScheduleJob scheduleJob)throws Exception {
         updateScheduleJob(scheduler, scheduleJob.getJobName(), scheduleJob.getJobGroup(),
             scheduleJob.getCronExpression(), scheduleJob.getIsSync(), scheduleJob);
     }
@@ -192,7 +192,7 @@ public class ScheduleUtils {
      * @param param the param
      */
     public static void updateScheduleJob(Scheduler scheduler, String jobName, String jobGroup,
-                                         String cronExpression, boolean isSync, Object param) {
+                                         String cronExpression, boolean isSync, Object param) throws Exception{
 
         //同步或异步
 //        Class<? extends Job> jobClass = isSync ? AsyncJobFactory.class : SyncJobFactory.class;
@@ -224,7 +224,7 @@ public class ScheduleUtils {
             }
         } catch (SchedulerException e) {
             LOG.error("更新定时任务失败", e);
-            throw new ScheduleException("更新定时任务失败");
+            throw new Exception("更新定时任务失败");
         }
     }
 
@@ -235,12 +235,12 @@ public class ScheduleUtils {
      * @param jobName
      * @param jobGroup
      */
-    public static void deleteScheduleJob(Scheduler scheduler, String jobName, String jobGroup) {
+    public static void deleteScheduleJob(Scheduler scheduler, String jobName, String jobGroup) throws Exception{
         try {
             scheduler.deleteJob(getJobKey(jobName, jobGroup));
         } catch (SchedulerException e) {
             LOG.error("删除定时任务失败", e);
-            throw new ScheduleException("删除定时任务失败");
+            throw new Exception("删除定时任务失败");
         }
     }
 }

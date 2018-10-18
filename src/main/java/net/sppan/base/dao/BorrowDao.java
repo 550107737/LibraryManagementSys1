@@ -15,7 +15,7 @@ public interface BorrowDao extends IBaseDao<BorrowModel, Integer> {
 
 	BorrowModel findByUserId(String username);
 
-	Page<BorrowModel> findAllByUserIdContaining(String searchText, Pageable pageable);
+	Page<BorrowModel> findAllByUserIdContainingAndBookRfidContaining(String userId,String bookRfid, Pageable pageable);
 
 	Long countByUserIdAndStatus(String userId,Integer status);
 

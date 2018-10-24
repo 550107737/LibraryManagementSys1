@@ -242,8 +242,9 @@ public class BorrowCtrl extends BaseController{
             }else{
                 borrowModel.setActualLocation(libraryLocation);
             }
-
+            borrowService.returnBorrow(borrowModel,inBox);
             //设备调用该函数应该只能收到用户id、书籍id、当前书柜书箱id，根据这些信息找到原来的borrowid再进行操作。
+            /*
             BorrowModel oldBorrowModel=borrowService.updateBorrowModelByReturn(borrowModel);
             borrowService.saveOrUpdate(oldBorrowModel);
 
@@ -254,33 +255,37 @@ public class BorrowCtrl extends BaseController{
                 borrowService.changeCaseAndBox(oldBorrowModel,2);//type为2代表还书
             borrowService.changeBookStatus(oldBorrowModel,2);//type为2代表还书
             borrowService.changeUserAction(oldBorrowModel);//修改用户剩余可借书籍数量
+            */
     }
 
     public void addBorrowForAPI(BorrowModel borrowModel) throws Exception{
-            borrowService.checkUserBorrowable(borrowModel,0);
-            borrowService.checkBookBorrowable(borrowModel,0);//0代表借书
-            BookModel bookModel=bookService.findByBookRfid(borrowModel.getBookRfid());
-            borrowModel.setBorrowTime(new Date());
-            borrowModel.setReturnTime(borrowService.getShouldReturnTime(borrowModel));//应还时间
-            borrowModel.setStatus(0);//新增则默认为书本未归还，编辑则根据网页
-            borrowModel.setAmount(0.0);
-            borrowModel.setIsFinish(0);
-            borrowModel.setIsPay(0);
-            if(bookModel.getInBox()==0){
-                borrowModel.setReturnBoxId(bookModel.getBoxId());
-                borrowModel.setReturnBookcaseId(bookModel.getBookcaseId());
-                BookboxModel bookboxModel=bookboxService.find(bookModel.getBoxId());
-                String location=bookboxModel.getLocation()+bookboxModel.getBoxSid().toString()+"层";
-                borrowModel.setReturnLocation(location);
-            }else{
-                borrowModel.setReturnLocation(bookModel.getBooksPosition());
-            }
+        borrowService.checkUserBorrowable(borrowModel, 0);
+        borrowService.checkBookBorrowable(borrowModel, 0);//0代表借书
+        BookModel bookModel = bookService.findByBookRfid(borrowModel.getBookRfid());
+        borrowModel.setBorrowTime(new Date());
+        borrowModel.setReturnTime(borrowService.getShouldReturnTime(borrowModel));//应还时间
+        borrowModel.setStatus(0);//新增则默认为书本未归还，编辑则根据网页
+        borrowModel.setAmount(0.0);
+        borrowModel.setIsFinish(0);
+        borrowModel.setIsPay(0);
+        if (bookModel.getInBox() == 0) {
+            borrowModel.setReturnBoxId(bookModel.getBoxId());
+            borrowModel.setReturnBookcaseId(bookModel.getBookcaseId());
+            BookboxModel bookboxModel = bookboxService.find(bookModel.getBoxId());
+            String location = bookboxModel.getLocation() + bookboxModel.getBoxSid().toString() + "层";
+            borrowModel.setReturnLocation(location);
+        } else {
+            borrowModel.setReturnLocation(bookModel.getBooksPosition());
+        }
 
-            borrowService.saveOrUpdate(borrowModel);
-            borrowService.changeBookStatus(borrowModel,0);//type为0代表新增借阅，service中bookModel.status直接置1
-            borrowService.changeUserAction(borrowModel);
-            if(bookModel.getInBox()==0){
-                borrowService.changeCaseAndBox(borrowModel,0);
-            }
+        //borrowService.saveOrUpdate(borrowModel);
+        //borrowService.changeBookStatus(borrowModel,0);//type为0代表新增借阅，service中bookModel.status直接置1
+        //borrowService.changeUserAction(borrowModel);
+        borrowService.addBorrow(borrowModel);
+        /*
+        if(bookModel.getInBox()==0){
+            borrowService.changeCaseAndBox(borrowModel,0);
+        }
+        */
     }
 }

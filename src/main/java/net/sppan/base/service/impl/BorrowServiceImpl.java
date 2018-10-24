@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -21,6 +22,7 @@ import java.util.List;
 
 
 @Service
+@Transactional(rollbackFor = {Exception.class})
 public class BorrowServiceImpl extends BaseServiceImpl<BorrowModel, Integer> implements BorrowService {
 
 	@Autowired
@@ -287,4 +289,29 @@ public class BorrowServiceImpl extends BaseServiceImpl<BorrowModel, Integer> imp
 		return borrowDao.findAllByBookRfid(bookRfid);
 	}
 
+	@Override
+	public void addBorrow(BorrowModel borrowModel) throws Exception{
+		BookModel bookModel = bookService.findByBookRfid(borrowModel.getBookRfid());
+		borrowService.saveOrUpdate(borrowModel);
+		borrowService.changeBookStatus(borrowModel,0);//type为0代表新增借阅，service中bookModel.status直接置1
+		borrowService.changeUserAction(borrowModel);
+		if(bookModel.getInBox()==0){
+			borrowService.changeCaseAndBox(borrowModel,0);
+		}
+		//throw new Exception("11");
+	}
+
+	@Override
+	public void returnBorrow(BorrowModel borrowModel, int inBox) throws Exception{
+		BorrowModel oldBorrowModel=borrowService.updateBorrowModelByReturn(borrowModel);
+		borrowService.saveOrUpdate(oldBorrowModel);
+
+		BookModel bookModel=bookService.findByBookRfid(oldBorrowModel.getBookRfid());
+		bookModel.setInBox(inBox);
+		bookService.saveOrUpdate(bookModel);
+		if(inBox==0)
+			borrowService.changeCaseAndBox(oldBorrowModel,2);//type为2代表还书
+		borrowService.changeBookStatus(oldBorrowModel,2);//type为2代表还书
+		borrowService.changeUserAction(oldBorrowModel);//修改用户剩余可借书籍数量
+	}
 }

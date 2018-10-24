@@ -113,4 +113,11 @@ public interface BorrowService extends IBaseService<BorrowModel, Integer> {
 
 	List<BorrowModel> findAllByBookRfid(String bookRfid);
 
+	/*
+	多个修改整合一个方法里配合transcational
+	 */
+	void addBorrow(BorrowModel borrowModel) throws Exception;
+
+	void returnBorrow(BorrowModel borrowModel,int inbox) throws Exception;
+
 }

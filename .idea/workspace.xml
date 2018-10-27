@@ -9,16 +9,13 @@
     <list default="true" id="6b694e7c-7e33-4081-8f5c-00bc9c92561b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/sppan/base/controller/API.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/sppan/base/controller/API.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/sppan/base/controller/BorrowCtrl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/sppan/base/controller/BorrowCtrl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/sppan/base/service/BorrowService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/sppan/base/service/BorrowService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/sppan/base/service/impl/BookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/sppan/base/service/impl/BookServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/sppan/base/service/impl/BorrowServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/sppan/base/service/impl/BorrowServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/config/consts/LabConsts.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/sppan/base/config/consts/LabConsts.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/sppan/base/controller/ConfigCtrl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/sppan/base/controller/ConfigCtrl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/sppan/base/entity/BookModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/sppan/base/entity/BookModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/sppan/base/entity/ConfigModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/sppan/base/entity/ConfigModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/controller/API.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/sppan/base/controller/API.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/controller/BorrowCtrl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/sppan/base/controller/BorrowCtrl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/service/BorrowService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/sppan/base/service/BorrowService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/service/impl/BookServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/sppan/base/service/impl/BookServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/service/impl/BorrowServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/sppan/base/service/impl/BorrowServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/controller/ConfigCtrl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/sppan/base/controller/ConfigCtrl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/sppan/base/entity/BookModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/sppan/base/entity/BookModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/更新说明.txt" beforeDir="false" afterPath="$PROJECT_DIR$/更新说明.txt" afterDir="false" />
     </list>
     <ignored path="SPPanAdmin.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,7 +46,7 @@
       <file leaf-file-name="RepairBookcaseCtrl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/net/sppan/base/controller/RepairBookcaseCtrl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
+            <state relative-caret-position="2430">
               <caret line="103" column="66" selection-start-line="103" selection-start-column="66" selection-end-line="103" selection-end-column="66" />
             </state>
           </provider>
@@ -58,7 +55,7 @@
       <file leaf-file-name="BorrowCtrl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/net/sppan/base/controller/BorrowCtrl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
+            <state relative-caret-position="6507">
               <caret line="263" column="84" selection-start-line="263" selection-start-column="8" selection-end-line="263" selection-end-column="84" />
             </state>
           </provider>
@@ -67,13 +64,13 @@
       <file leaf-file-name="BorrowService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/net/sppan/base/service/BorrowService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
+            <state relative-caret-position="3078">
               <caret line="120" column="55" selection-start-line="120" selection-start-column="55" selection-end-line="120" selection-end-column="55" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BorrowServiceImpl.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BorrowServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/net/sppan/base/service/impl/BorrowServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="7344">
@@ -82,11 +79,23 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="API.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/net/sppan/base/controller/API.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-6427">
+              <caret line="177" column="53" selection-start-line="177" selection-start-column="53" selection-end-line="177" selection-end-column="53" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="ConfigCtrl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/net/sppan/base/controller/ConfigCtrl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="945">
-              <caret line="59" column="65" selection-start-line="59" selection-start-column="65" selection-end-line="59" selection-end-column="65" />
+            <state relative-caret-position="837">
+              <caret line="55" column="10" selection-start-line="55" selection-start-column="10" selection-end-line="55" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -140,8 +149,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/templates/borrow/borrowhistory.ftl" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/borrow/borrowhistory_student.ftl" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/borrow/returnForm.ftl" />
         <option value="$PROJECT_DIR$/src/main/java/net/sppan/base/dao/BorrowHistoryDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/sppan/base/service/impl/BorrowHistoryServiceImpl.java" />
@@ -183,14 +190,16 @@
         <option value="$PROJECT_DIR$/src/main/java/net/sppan/base/dao/BorrowDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/sppan/base/controller/BookCtrl.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/books/transferForm.ftl" />
-        <option value="$PROJECT_DIR$/src/main/java/net/sppan/base/controller/ConfigCtrl.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/sppan/base/controller/RepairBookcaseCtrl.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/repairbookcase/repairbookcase.ftl" />
         <option value="$PROJECT_DIR$/src/main/java/net/sppan/base/service/impl/BookServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/sppan/base/service/BorrowService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/sppan/base/controller/API.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/sppan/base/controller/BorrowCtrl.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/sppan/base/service/impl/BorrowServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/sppan/base/entity/ConfigModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/sppan/base/entity/BookModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/sppan/base/controller/API.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/sppan/base/controller/ConfigCtrl.java" />
       </list>
     </option>
   </component>
@@ -211,7 +220,7 @@
       <path value="$PROJECT_DIR$/src/main/resources/static/assets/js/crypto-js/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="960" />
@@ -225,8 +234,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -268,16 +276,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="base" type="462c0819:PsiDirectoryNode" />
               <item name="common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SPPanAdmin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LibraryManagementSys" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SPPanAdmin" type="b2602c69:ProjectViewProjectNode" />
@@ -426,7 +424,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -726,14 +725,17 @@
       <workItem from="1539815809107" duration="13071000" />
       <workItem from="1540372432324" duration="1229000" />
       <workItem from="1540419852386" duration="4523000" />
+      <workItem from="1540618344116" duration="1023000" />
+      <workItem from="1540628909389" duration="4157000" />
+      <workItem from="1540681474486" duration="380000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="514664000" />
+    <option name="totallyTimeSpent" value="520224000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info anchor="right" id="Palette" order="10" />
       <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.50572914" side_tool="true" weight="0.3744681" />
@@ -747,7 +749,6 @@
       <window_info id="UI Designer" order="3" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49427083" weight="0.3744681" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.4978701" weight="0.27340424" />
       <window_info id="Palette&#9;" order="6" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" />
@@ -756,8 +757,8 @@
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4978701" weight="0.33475026" />
       <window_info anchor="bottom" id="Spring" order="7" weight="0.32969433" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32969433" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4940978" visible="true" weight="0.1625" />
       <window_info anchor="bottom" id="Problems" order="16" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4940978" visible="true" weight="0.175" />
       <window_info anchor="right" id="Bean Validation" order="9" />
       <window_info id="Web" order="5" sideWeight="0.5059022" side_tool="true" weight="0.17944622" />
       <window_info anchor="right" id="SciView" order="11" />
@@ -770,6 +771,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="ConsoleMavenPlugin" order="11" weight="0.32969433" />
+      <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.4978701" weight="0.27340424" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32943678" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -791,7 +793,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="227" />
+      <option name="time" value="229" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -799,13 +801,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/sppan/base/entity/ConfigModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/net/sppan/base/service/impl/BookboxServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -820,13 +815,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/sppan/base/config/consts/LabConsts.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/net/sppan/base/entity/RepairBookcaseModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -838,16 +826,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="567">
           <caret line="184" column="40" selection-start-line="184" selection-start-column="40" selection-end-line="184" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3335#3336#0" expanded="true" />
-            <element signature="e#3394#3395#0" expanded="true" />
-            <element signature="e#3439#3440#0" expanded="true" />
-            <element signature="e#3478#3479#0" expanded="true" />
-            <element signature="e#3507#3508#0" expanded="true" />
-            <element signature="e#3566#3567#0" expanded="true" />
-            <element signature="e#3611#3612#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -898,13 +876,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="27">
           <caret line="105" selection-start-line="105" selection-end-line="105" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/sppan/base/entity/BookModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -959,13 +930,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="511">
           <caret line="81" column="13" lean-forward="true" selection-start-line="81" selection-start-column="13" selection-end-line="81" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/sppan/base/controller/ChangeRfidCtrl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="115" column="26" selection-start-line="115" selection-start-column="26" selection-end-line="115" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -1088,21 +1052,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/sppan/base/controller/ConfigCtrl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="945">
-          <caret line="59" column="65" selection-start-line="59" selection-start-column="65" selection-end-line="59" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/net/sppan/base/service/support/impl/BaseServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
           <caret line="73" column="13" selection-start-line="73" selection-start-column="13" selection-end-line="73" selection-end-column="13" />
-          <folding>
-            <element signature="e#1786#1787#0" expanded="true" />
-            <element signature="e#1842#1843#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1110,20 +1063,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="24" column="47" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/sppan/base/controller/API.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9475">
-          <caret line="429" lean-forward="true" selection-start-line="429" selection-end-line="429" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#5418#5429#0" expanded="true" />
-            <element signature="e#10500#10520#0" expanded="true" />
-            <element signature="e#10595#10606#0" expanded="true" />
-            <element signature="e#13027#13038#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1143,22 +1082,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/net/sppan/base/controller/RepairBookcaseCtrl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
+        <state relative-caret-position="2430">
           <caret line="103" column="66" selection-start-line="103" selection-start-column="66" selection-end-line="103" selection-end-column="66" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/net/sppan/base/controller/BorrowCtrl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
+        <state relative-caret-position="6507">
           <caret line="263" column="84" selection-start-line="263" selection-start-column="8" selection-end-line="263" selection-end-column="84" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/net/sppan/base/service/BorrowService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
+        <state relative-caret-position="3078">
           <caret line="120" column="55" selection-start-line="120" selection-start-column="55" selection-end-line="120" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/sppan/base/controller/ChangeRfidCtrl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="115" column="26" selection-start-line="115" selection-start-column="26" selection-end-line="115" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/sppan/base/entity/ConfigModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-487">
+          <caret line="38" column="31" lean-forward="true" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/sppan/base/entity/BookModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2324">
+          <caret line="118" column="19" selection-start-line="118" selection-start-column="7" selection-end-line="118" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -1166,6 +1126,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7344">
           <caret line="299" column="9" selection-start-line="299" selection-start-column="9" selection-end-line="299" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/sppan/base/config/consts/LabConsts.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/sppan/base/controller/ConfigCtrl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="837">
+          <caret line="55" column="10" selection-start-line="55" selection-start-column="10" selection-end-line="55" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/sppan/base/controller/API.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6427">
+          <caret line="177" column="53" selection-start-line="177" selection-start-column="53" selection-end-line="177" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

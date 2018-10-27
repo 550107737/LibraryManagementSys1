@@ -41,26 +41,30 @@ public class ConfigCtrl extends BaseController {
     public String index(ModelMap map) {
 
         /*
-        String jsonListStr="{\"20000007\":\"00000002\",\"20000008\":\"00000008\",\"20000009\":\"00000005,00000006,00000007\"}";
-        ParamModel paramModel=new ParamModel();
+        String jsonListStr="{\"20000007\":\"00000002\",\"20000008\":\"00000009\",\"20000009\":\"00000005,00000006,00000007\"}";
+        ParamModel param=new ParamModel();
         Date date=new Date();
-        paramModel.setTime(date.getTime()+"");
-        paramModel.setBookcaseSN("10000003");
-        String serverAPIKey = CryptoUtil.md5(LabConsts.SECRET_KEY).concat(CryptoUtil.md5(paramModel.getBookcaseSN())).
-                concat(date.getTime()+"").concat(CryptoUtil.md5("admin"));
-        paramModel.setToken(serverAPIKey);
+        param.setTime(date.getTime()+"");
+        String userId="admin";
+        param.setBookcaseSN("10000003");
+        String serverAPIKey = CryptoUtil.md5(LabConsts.SECRET_KEY).concat(CryptoUtil.md5(param.getBookcaseSN())).
+                concat(param.getTime()).concat(CryptoUtil.md5(userId));
+        String serverAPIKey1 = CryptoUtil.md5(serverAPIKey);
+        param.setToken(serverAPIKey1);
         System.out.println(serverAPIKey);
-        api.borrowBook(paramModel,"admin",jsonListStr);
+        api.borrowBook(param,"admin",jsonListStr);
         */
+        /*
         ParamModel paramModel=new ParamModel();
         Date date=new Date();
         paramModel.setTime(date.getTime()+"");
         paramModel.setBookcaseSN("10000003");
-        String serverAPIKey = CryptoUtil.md5(LabConsts.SECRET_KEY).concat(CryptoUtil.md5(paramModel.getBookcaseSN())).
-                concat(date.getTime()+"").concat(CryptoUtil.md5(""));
-        paramModel.setToken(serverAPIKey);
+        String serverAPIKey = CryptoUtil.md5(LabConsts.SECRET_KEY).concat(CryptoUtil.md5(param.getBookcaseSN())).
+                concat(param.getTime()).concat(CryptoUtil.md5(userId));
+        String serverAPIKey1 = CryptoUtil.md5(serverAPIKey);
+        param.setToken(serverAPIKey1);
         api.doorOverTime(paramModel);
-
+        */
         return "config/config";
     }
 

@@ -1,3 +1,10 @@
+2018.10.28: by Huanggua
+
+1. 部分service加入transactional注解，确保多个数据库同步更新
+
+2. API借还书接口优化，同时BookModel中加入tradeSuccess字段，供返回给前端显示交易是否成功
+
+-----------------------------------
 2018.10.18: By Huanggua
 
 1. 根据最新的接口文档完善API接口

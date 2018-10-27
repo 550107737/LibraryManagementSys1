@@ -139,37 +139,73 @@ public class API extends BaseController {
             diff = getDifference(bookModels, dbBookModels);
             List<BookModel> borrowBooksData = new ArrayList<>();
             List<BookModel> returnBooksData = new ArrayList<>();
-            if (diff.size() > 0) {
-                for (BookModel bookModel : diff) {
-                    //等于0代表原来就在数据库中，所以只能是借走操作0
-                    if (bookModel.getBooksStatus() == 0) {
-                        borrowBooksData.add(bookModel);
-                    } else {
-                        returnBooksData.add(bookModel);
-                    }
-                }
-                String a = JSON.toJSONStringWithDateFormat(borrowBooksData, "yyyy-MM-dd HH:mm:ss", SerializerFeature.WriteDateUseDateFormat);
-                String b = JSON.toJSONStringWithDateFormat(returnBooksData, "yyyy-MM-dd HH:mm:ss", SerializerFeature.WriteDateUseDateFormat);
-                //jsonResult.setData(JsonUtil.map2json(map));
-                jsonResult.setBorrowBooksData(a);
-                jsonResult.setReturnBooksData(b);
-                System.out.println(a);
-                System.out.println(b);
-            } else {
+            if(diff.size()<=0){
                 //差异为0代表没有书籍变动，直接返回，默认借书状态
-
                 jsonResult.setResult(true);
                 return jsonResult;
             }
-
             // todo 4. 更新用户借阅记录--借书/还书表
             JSONObject jsonObject = JSON.parseObject(jsonListStr);
             String[] jsonStr = new String[bookboxModels.size()];
             for (int i = 0; i < bookboxModels.size(); i++) {
                 jsonStr[i] = jsonObject.getString(bookboxModels.get(i).getBoxRfid());
             }
+
+
+            for (BookModel bookModel : diff) {
+                //等于0代表原来就在数据库中，所以只能是借走操作0
+                if (bookModel.getBooksStatus() == 0) {
+                    try {
+                        BorrowModel borrowModel = new BorrowModel();
+                        borrowModel.setUserId(userId);
+                        borrowModel.setBookRfid(bookModel.getBookRfid());
+                        borrowCtrl.addBorrowForAPI(borrowModel);
+                        bookModel.setTradeSuccess(1);
+                    } catch (Exception e) {
+                        bookModel.setTradeSuccess(0);
+                    } finally {
+                        borrowBooksData.add(bookModel);
+                    }
+                } else {
+                    try {
+                        BorrowModel borrowModel = new BorrowModel();
+                        borrowModel.setUserId(userId);
+                        borrowModel.setBookRfid(bookModel.getBookRfid());
+                        borrowModel.setActualBookcaseId(bookcaseModel.getBookcaseId());
+                        //todo 获取该书还入的书箱信息
+                        for (int i = 0; i < bookboxModels.size(); i++) {
+                            if (jsonStr[i].contains(bookModel.getBookRfid())) {
+                                borrowModel.setActualBoxId(bookboxModels.get(i).getBoxSid());
+                                break;
+                            }
+                        }
+                        borrowCtrl.returnBorrowForAPI(borrowModel, 0, "");
+                        bookModel.setTradeSuccess(1);
+                    } catch (Exception e) {
+                        bookModel.setTradeSuccess(0);
+                    } finally {
+                        returnBooksData.add(bookModel);
+                    }
+                }
+            }
+            String a = JSON.toJSONStringWithDateFormat(borrowBooksData, "yyyy-MM-dd HH:mm:ss", SerializerFeature.WriteDateUseDateFormat);
+            String b = JSON.toJSONStringWithDateFormat(returnBooksData, "yyyy-MM-dd HH:mm:ss", SerializerFeature.WriteDateUseDateFormat);
+            //jsonResult.setData(JsonUtil.map2json(map));
+            jsonResult.setBorrowBooksData(a);
+            jsonResult.setReturnBooksData(b);
+            System.out.println(a);
+            System.out.println(b);
+            /*
+            // todo 4. 更新用户借阅记录--借书/还书表
+
+            JSONObject jsonObject = JSON.parseObject(jsonListStr);
+            String[] jsonStr = new String[bookboxModels.size()];
+            for (int i = 0; i < bookboxModels.size(); i++) {
+                jsonStr[i] = jsonObject.getString(bookboxModels.get(i).getBoxRfid());
+            }
+
             //还书
-            for (BookModel bookModel : returnBooksData) {
+            for (BookModel bookModel : returnBooksData_tmp) {
                 BorrowModel borrowModel = new BorrowModel();
                 borrowModel.setUserId(userId);
                 borrowModel.setBookRfid(bookModel.getBookRfid());
@@ -184,40 +220,17 @@ public class API extends BaseController {
                 borrowCtrl.returnBorrowForAPI(borrowModel, 0, "");
             }
             //借书
-            for (BookModel bookModel : borrowBooksData) {
+            for (BookModel bookModel : borrowBooksData_tmp) {
                 BorrowModel borrowModel = new BorrowModel();
                 borrowModel.setUserId(userId);
                 borrowModel.setBookRfid(bookModel.getBookRfid());
                 borrowCtrl.addBorrowForAPI(borrowModel);
             }
-            /*
-            for(Map.Entry<BookModel, Integer> entry:map.entrySet()) {
-                BookModel bookModel=entry.getKey();
-                BorrowModel borrowModel=new BorrowModel();
-                borrowModel.setUserId(userId);
-                if(entry.getValue()==1) {
-                    //还书
-                    borrowModel.setBookRfid(bookModel.getBookRfid());
-                    borrowModel.setActualBookcaseId(bookcaseModel.getBookcaseId());
-                    //todo 获取该书还入的书箱信息
-                    for(int i=0;i<bookboxModels.size();i++){
-                        if(jsonStr[i].contains(bookModel.getBookRfid())){
-                            borrowModel.setActualBoxId(bookboxModels.get(i).getBoxSid());
-                            break;
-                        }
-                    }
-                    borrowCtrl.returnBorrow(borrowModel,0,"");
-                }else{
-                    //借书
-                    borrowModel.setBookRfid(bookModel.getBookRfid());
-                    borrowCtrl.addBorrow(borrowModel);
-                }
-            }
             */
         } catch (Exception e) {
             jsonResult.setResult(false);
             jsonResult.setMessage(e.getMessage());
-            //e.printStackTrace();
+            e.printStackTrace();
             return jsonResult;
         }
         jsonResult.setResult(true);

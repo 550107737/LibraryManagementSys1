@@ -109,4 +109,5 @@ public class ConfigModel extends BaseEntity {
 	public void setUpdateTime(Date updateTime) {
 		this.updateTime = updateTime;
 	}
+
 }

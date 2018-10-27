@@ -106,7 +106,7 @@ public class BookModel extends BaseEntity {
 	 */
 	private Integer inBox;
 	/**
-	 * 更新时间
+	 * 盘点时间
 	 */
 	@JSONField(format = "yyyy-MM-dd HH:mm:ss")
 	private Date checkDate;
@@ -115,7 +115,11 @@ public class BookModel extends BaseEntity {
 	 */
 	@JSONField(format = "yyyy-MM-dd HH:mm:ss")
 	private Date updateTime;
-
+	/**
+	 * 交易标志位，0失败1成功，不在数据库中
+	 */
+	@Transient
+	private Integer tradeSuccess;
 
 
 	public static long getSerialVersionUID() {
@@ -308,5 +312,13 @@ public class BookModel extends BaseEntity {
 
 	public void setCheckDate(Date checkDate) {
 		this.checkDate = checkDate;
+	}
+
+	public Integer getTradeSuccess() {
+		return tradeSuccess;
+	}
+
+	public void setTradeSuccess(Integer tradeSuccess) {
+		this.tradeSuccess = tradeSuccess;
 	}
 }

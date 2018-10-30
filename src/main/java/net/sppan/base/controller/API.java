@@ -114,7 +114,7 @@ public class API extends BaseController {
      */
     @RequestMapping(value = {"/door/reportDoorCloseStatus"})
     @ResponseBody
-    public JsonResult reportDoorCloseStatus(@ModelAttribute("param") ParamModel param, @RequestParam String userId, @RequestParam String jsonListStr) {
+    public JsonResult reportDoorCloseStatus(@ModelAttribute("param") ParamModel param, @RequestParam String userId, @RequestParam String jsonBooksRfid) {
         Date date = new Date();
         JsonResult jsonResult = new JsonResult();
         jsonResult.setApi_flag(LabConsts.API_FLAG);
@@ -142,7 +142,7 @@ public class API extends BaseController {
                 dbBookModels = new ArrayList<BookModel>();
             }
             //获取书柜内书籍列表
-            List<BookModel> bookModels = getBooksInBookcase(jsonListStr, bookboxModels);
+            List<BookModel> bookModels = getBooksInBookcase(jsonBooksRfid, bookboxModels);
 
             //todo 3. 判断多出书还是少了书籍（单独写一个方法，盘点的时候可以直接调用）
 

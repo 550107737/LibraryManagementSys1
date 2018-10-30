@@ -283,6 +283,7 @@ public class API extends BaseController {
                     bookModel.setTradeSuccess(1);
                 } catch (Exception e) {
                     bookModel.setTradeSuccess(0);
+                    e.printStackTrace();
                 } finally {
                     borrowBooksData.add(bookModel);
                 }
@@ -298,6 +299,7 @@ public class API extends BaseController {
                     bookModel.setTradeSuccess(1);
                 } catch (Exception e) {
                     bookModel.setTradeSuccess(0);
+                    e.printStackTrace();
                 } finally {
                     returnBooksData.add(bookModel);
                 }

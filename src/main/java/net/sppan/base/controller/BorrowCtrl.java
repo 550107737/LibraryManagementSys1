@@ -6,6 +6,7 @@ import net.sppan.base.service.*;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.IncorrectResultSizeDataAccessException;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -73,10 +74,11 @@ public class BorrowCtrl extends BaseController{
      */
     @RequestMapping("/returnBorrow")
     @ResponseBody
-    public JsonResult returnBorrow(BorrowModel borrowModel,Integer inBox,String libraryLocation){//注意这里actualboxid的值是书箱层号，也就是bookboxModel中的boxsid,并不是书箱id
+    public JsonResult returnBorrow(BorrowModel borrowModel,Integer inBox,String libraryLocation) {//注意这里actualboxid的值是书箱层号，也就是bookboxModel中的boxsid,并不是书箱id
         try {
             returnBorrowForAPI(borrowModel,inBox,libraryLocation);
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             e.printStackTrace();
             return JsonResult.failure(e.getMessage());
         }
@@ -218,7 +220,7 @@ public class BorrowCtrl extends BaseController{
     }
 
     public void returnBorrowForAPI(BorrowModel borrowModel,Integer inBox,String libraryLocation) throws Exception{//注意这里actualboxid的值是书箱层号，也就是bookboxModel中的boxsid,并不是书箱id
-            borrowService.checkUserBorrowable(borrowModel,1);//仅为了检查是否存在此用户，还书不需要对用户的各种状态进行校验
+            borrowService.checkUserBorrowable(borrowModel,2);//仅为了检查是否存在此用户，还书不需要对用户的各种状态进行校验
             borrowService.checkBookBorrowable(borrowModel,2);//检查书籍状态是否可还
             BorrowModel dbBorrowModel=borrowService.findByUserIdAndBookRfidAndStatus(borrowModel.getUserId(),borrowModel.getBookRfid(),0);
             if(dbBorrowModel==null){
@@ -234,9 +236,6 @@ public class BorrowCtrl extends BaseController{
                 }
                 borrowModel.setActualBoxId(bookboxModel.getBoxId());//将actualboxid(实际为boxsid)转换为boxId
                 borrowService.checkBoxReturnable(borrowModel);//检查书箱是否满书
-                if(bookboxModel==null){
-                    throw new Exception("未查询到归还书柜和书箱");
-                }
                 String location=bookboxModel.getLocation()+bookboxModel.getBoxSid().toString()+"层";
                 borrowModel.setActualLocation(location);
             }else{

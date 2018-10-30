@@ -40,8 +40,8 @@ public class ConfigCtrl extends BaseController {
     @RequestMapping(value = { "/", "/config" })
     public String index(ModelMap map) {
 
-        /*
-        String jsonListStr="{\"20000007\":\"00000002\",\"20000008\":\"00000009\",\"20000009\":\"00000005,00000006,00000007\"}";
+/*      //接口2.2测试
+        String jsonListStr="{\"20000007\":\"00000002\",\"20000008\":\"00000005,00000008\",\"20000009\":\"00000007,00000006\"}";
         ParamModel param=new ParamModel();
         Date date=new Date();
         param.setTime(date.getTime()+"");
@@ -52,9 +52,26 @@ public class ConfigCtrl extends BaseController {
         String serverAPIKey1 = CryptoUtil.md5(serverAPIKey);
         param.setToken(serverAPIKey1);
         System.out.println(serverAPIKey);
-        api.borrowBook(param,"admin",jsonListStr);
-        */
+        api.reportDoorCloseStatus(param,"admin",jsonListStr);
+*/
+
+        //接口2.3测试
+        String testBorrow="[]";
+        String testReturn="[{\"amount\":999,\"authors\":\"02348\",\"bookName\":\"springd\",\"bookRfid\":\"00000006\",\"bookTime\":\"2018-08-03 10:01:23\",\"bookcaseId\":20,\"booksId\":11,\"booksPosition\":\"图书馆还书地\",\"booksStatus\":1,\"boxId\":3,\"checkDate\":\"2018-08-21 10:02:18\",\"checkStatus\":0,\"classification\":\"军事\",\"description\":\"6879789\",\"document\":\"3289749827\",\"imgurl\":\"234\",\"inBox\":0,\"isbn\":\"3294239847\",\"language\":\"spring\",\"publication\":\"302948\",\"publicationTime\":\"2018-08-12 00:00:00\",\"repayTime\":\"2018-11-30 00:00:00\",\"updateTime\":\"2018-10-31 09:00:49\"}]";
+        ParamModel param=new ParamModel();
+        Date date=new Date();
+        param.setTime(date.getTime()+"");
+        String userId="admin";
+        param.setBookcaseSN("10000003");
+        String serverAPIKey = CryptoUtil.md5(LabConsts.SECRET_KEY).concat(CryptoUtil.md5(param.getBookcaseSN())).
+                concat(param.getTime()).concat(CryptoUtil.md5(userId));
+        String serverAPIKey1 = CryptoUtil.md5(serverAPIKey);
+        param.setToken(serverAPIKey1);
+        System.out.println(serverAPIKey);
+        api.checkDoorCloseStatus(param,"admin",testBorrow,testReturn);
+
         /*
+        //接口2.4测试
         ParamModel paramModel=new ParamModel();
         Date date=new Date();
         paramModel.setTime(date.getTime()+"");

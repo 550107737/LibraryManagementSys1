@@ -20,6 +20,9 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import static net.sppan.base.config.consts.LabConsts.BORROWABLE_CHECK_FULLY;
+import static net.sppan.base.config.consts.LabConsts.BORROWABLE_CHECK_LOGIN;
+
 
 @Service
 @Transactional(rollbackFor = {Exception.class})
@@ -126,21 +129,22 @@ public class BorrowServiceImpl extends BaseServiceImpl<BorrowModel, Integer> imp
 			throw new Exception("查无此用户");
 		}
 		Date date=new Date();
-		if(type==0 && date.getTime()>userModel.getSidTime().getTime()){
-			throw new Exception("证件已过有效期");
+		if((type==BORROWABLE_CHECK_FULLY || type== BORROWABLE_CHECK_LOGIN ) && date.getTime()>userModel.getSidTime().getTime()){
+			throw new Exception("证件已过有效期，无法登录书柜！");
 		}
-		if(type ==0 && userModel.getRemainNum()<=0){
-			throw new Exception("超过最大可借数量！");
+		if(type ==BORROWABLE_CHECK_FULLY && userModel.getRemainNum()<=0){
+			throw new Exception("超过最大可借数量，请先归还后再进行借阅！");
 		}
-		if(type==0 && userModel.getUserStatus()!=0){
-			throw new Exception("账户状态异常！");
+		if((type==BORROWABLE_CHECK_FULLY || type== BORROWABLE_CHECK_LOGIN )  && userModel.getUserStatus()!=0){
+			throw new Exception("账户状态异常，无法登录书柜！");
 		}
-		if(type==0 && userModel.getIsOverdue()==1){
+		if(type==BORROWABLE_CHECK_FULLY && userModel.getIsOverdue()==1){
 			throw new Exception("存在超期未还的书籍，请先归还后再进行借阅！");
 		}
-		if(type==0 && userModel.getOverdueTotalAmount()>0){
+		if(type==BORROWABLE_CHECK_FULLY && userModel.getOverdueTotalAmount()>0){
 			throw new Exception("存在未缴款的罚款，请先缴款后再进行借阅！");
 		}
+
 	}
 
 	@Override

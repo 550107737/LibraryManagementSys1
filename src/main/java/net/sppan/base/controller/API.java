@@ -20,10 +20,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+import static net.sppan.base.config.consts.LabConsts.BORROWABLE_CHECK_FULLY;
+import static net.sppan.base.config.consts.LabConsts.BORROWABLE_CHECK_LOGIN;
+
 @Controller
 @RequestMapping("/API")
 public class API extends BaseController {
 
+    @Autowired
+    private UserService userService;
     @Autowired
     private BorrowService borrowService;
     @Autowired
@@ -65,7 +70,10 @@ public class API extends BaseController {
             /// todo 查询用户是否有权限借书
             BorrowModel borrowModel = new BorrowModel();
             borrowModel.setUserId(userId);
-            borrowService.checkUserBorrowable(borrowModel, 0);
+            borrowService.checkUserBorrowable(borrowModel, BORROWABLE_CHECK_LOGIN);
+            //将userModel放在data里供安卓使用
+            jsonResult.setData(JSON.toJSONStringWithDateFormat(userService.findByUserId(userId),
+                    "yyyy-MM-dd HH:mm:ss", SerializerFeature.WriteDateUseDateFormat));
         } catch (Exception e) {
             jsonResult.setResult(false);
             jsonResult.setMessage(e.getMessage());
@@ -99,14 +107,14 @@ public class API extends BaseController {
 
 
     /**
-     * @方法名: borrowBook
-     * @功能描述: 书柜关门-获取借书或者还书状态
+     * @方法名: reportDoorCloseStatus
+     * @功能描述: 书柜关门-获取借书或者还书状态，仅返回列表
      * @创建人: 黄梓莘
      * @创建时间： 2018-7-29
      */
     @RequestMapping(value = {"/door/reportDoorCloseStatus"})
     @ResponseBody
-    public JsonResult borrowBook(@ModelAttribute("param") ParamModel param, @RequestParam String userId, @RequestParam String jsonListStr) {
+    public JsonResult reportDoorCloseStatus(@ModelAttribute("param") ParamModel param, @RequestParam String userId, @RequestParam String jsonListStr) {
         Date date = new Date();
         JsonResult jsonResult = new JsonResult();
         jsonResult.setApi_flag(LabConsts.API_FLAG);
@@ -119,6 +127,11 @@ public class API extends BaseController {
             jsonResult.setToken(serverAPIKey);
             //todo 1. 校验 ，和开门登录的方法一样
             String serverAPIKey1 = checkParam(param, userId);
+            /// todo 查询用户是否有权限借书
+            BorrowModel borrowModel1 = new BorrowModel();
+            borrowModel1.setUserId(userId);
+            borrowService.checkUserBorrowable(borrowModel1, BORROWABLE_CHECK_FULLY);
+
             //todo 2. 将json格式的booklist转化为booklist
             BookcaseModel bookcaseModel = bookcaseService.findByBookcaseRfid(param.getBookcaseSN());
             List<BookboxModel> bookboxModels = bookboxService.findByBookcaseId(bookcaseModel.getBookcaseId());
@@ -130,8 +143,6 @@ public class API extends BaseController {
             }
             //获取书柜内书籍列表
             List<BookModel> bookModels = getBooksInBookcase(jsonListStr, bookboxModels);
-            ;
-
 
             //todo 3. 判断多出书还是少了书籍（单独写一个方法，盘点的时候可以直接调用）
 
@@ -140,52 +151,16 @@ public class API extends BaseController {
             List<BookModel> borrowBooksData = new ArrayList<>();
             List<BookModel> returnBooksData = new ArrayList<>();
             if(diff.size()<=0){
-                //差异为0代表没有书籍变动，直接返回，默认借书状态
+                //差异为0代表没有书籍变动，直接返回
                 jsonResult.setResult(true);
                 return jsonResult;
             }
-            // todo 4. 更新用户借阅记录--借书/还书表
-            JSONObject jsonObject = JSON.parseObject(jsonListStr);
-            String[] jsonStr = new String[bookboxModels.size()];
-            for (int i = 0; i < bookboxModels.size(); i++) {
-                jsonStr[i] = jsonObject.getString(bookboxModels.get(i).getBoxRfid());
-            }
-
-
             for (BookModel bookModel : diff) {
                 //等于0代表原来就在数据库中，所以只能是借走操作0
                 if (bookModel.getBooksStatus() == 0) {
-                    try {
-                        BorrowModel borrowModel = new BorrowModel();
-                        borrowModel.setUserId(userId);
-                        borrowModel.setBookRfid(bookModel.getBookRfid());
-                        borrowCtrl.addBorrowForAPI(borrowModel);
-                        bookModel.setTradeSuccess(1);
-                    } catch (Exception e) {
-                        bookModel.setTradeSuccess(0);
-                    } finally {
                         borrowBooksData.add(bookModel);
-                    }
                 } else {
-                    try {
-                        BorrowModel borrowModel = new BorrowModel();
-                        borrowModel.setUserId(userId);
-                        borrowModel.setBookRfid(bookModel.getBookRfid());
-                        borrowModel.setActualBookcaseId(bookcaseModel.getBookcaseId());
-                        //todo 获取该书还入的书箱信息
-                        for (int i = 0; i < bookboxModels.size(); i++) {
-                            if (jsonStr[i].contains(bookModel.getBookRfid())) {
-                                borrowModel.setActualBoxId(bookboxModels.get(i).getBoxSid());
-                                break;
-                            }
-                        }
-                        borrowCtrl.returnBorrowForAPI(borrowModel, 0, "");
-                        bookModel.setTradeSuccess(1);
-                    } catch (Exception e) {
-                        bookModel.setTradeSuccess(0);
-                    } finally {
                         returnBooksData.add(bookModel);
-                    }
                 }
             }
             String a = JSON.toJSONStringWithDateFormat(borrowBooksData, "yyyy-MM-dd HH:mm:ss", SerializerFeature.WriteDateUseDateFormat);
@@ -195,38 +170,7 @@ public class API extends BaseController {
             jsonResult.setReturnBooksData(b);
             System.out.println(a);
             System.out.println(b);
-            /*
-            // todo 4. 更新用户借阅记录--借书/还书表
 
-            JSONObject jsonObject = JSON.parseObject(jsonListStr);
-            String[] jsonStr = new String[bookboxModels.size()];
-            for (int i = 0; i < bookboxModels.size(); i++) {
-                jsonStr[i] = jsonObject.getString(bookboxModels.get(i).getBoxRfid());
-            }
-
-            //还书
-            for (BookModel bookModel : returnBooksData_tmp) {
-                BorrowModel borrowModel = new BorrowModel();
-                borrowModel.setUserId(userId);
-                borrowModel.setBookRfid(bookModel.getBookRfid());
-                borrowModel.setActualBookcaseId(bookcaseModel.getBookcaseId());
-                //todo 获取该书还入的书箱信息
-                for (int i = 0; i < bookboxModels.size(); i++) {
-                    if (jsonStr[i].contains(bookModel.getBookRfid())) {
-                        borrowModel.setActualBoxId(bookboxModels.get(i).getBoxSid());
-                        break;
-                    }
-                }
-                borrowCtrl.returnBorrowForAPI(borrowModel, 0, "");
-            }
-            //借书
-            for (BookModel bookModel : borrowBooksData_tmp) {
-                BorrowModel borrowModel = new BorrowModel();
-                borrowModel.setUserId(userId);
-                borrowModel.setBookRfid(bookModel.getBookRfid());
-                borrowCtrl.addBorrowForAPI(borrowModel);
-            }
-            */
         } catch (Exception e) {
             jsonResult.setResult(false);
             jsonResult.setMessage(e.getMessage());
@@ -286,6 +230,112 @@ public class API extends BaseController {
             }
         }
         return diff;
+    }
+
+    /**
+     * @方法名: checkDoorCloseStatus
+     * @功能描述: 书柜关门-操作数据库更新书籍
+     * @创建人: 黄梓莘
+     * @创建时间： 2018-10-30
+     */
+    @RequestMapping(value = {"/door/checkDoorCloseStatus"})
+    @ResponseBody
+    public JsonResult checkDoorCloseStatus(@ModelAttribute("param") ParamModel param, @RequestParam String userId,@RequestParam String jsonListStr) {
+        Date date = new Date();
+        JsonResult jsonResult = new JsonResult();
+        jsonResult.setApi_flag(LabConsts.API_FLAG);
+        jsonResult.setServer_time(date.getTime() + "");
+        jsonResult.setRetry_after_seconds(0);
+        try {
+            //优先生成服务器token
+            String serverAPIKey = CryptoUtil.md5(CryptoUtil.md5(LabConsts.SECRET_KEY).concat(CryptoUtil.md5(param.getBookcaseSN())).
+                    concat(date.getTime() + "").concat(CryptoUtil.md5(userId)));
+            jsonResult.setToken(serverAPIKey);
+            //todo 1. 校验 ，和开门登录的方法一样
+            String serverAPIKey1 = checkParam(param, userId);
+
+            //todo 2. 将json格式的booklist转化为booklist
+            BookcaseModel bookcaseModel = bookcaseService.findByBookcaseRfid(param.getBookcaseSN());
+            List<BookboxModel> bookboxModels = bookboxService.findByBookcaseId(bookcaseModel.getBookcaseId());
+            //根据书籍所属书柜ID和未借出状态统计数据库书籍数量
+            List<BookModel> dbBookModels = bookDao.findAllByBookcaseIdAndBooksStatus(bookcaseModel.getBookcaseId(), 0);
+            if (dbBookModels == null) {
+                //一本书都没有
+                dbBookModels = new ArrayList<BookModel>();
+            }
+            //获取书柜内书籍列表
+            List<BookModel> bookModels = getBooksInBookcase(jsonListStr, bookboxModels);
+
+            //todo 3. 判断多出书还是少了书籍（单独写一个方法，盘点的时候可以直接调用）
+
+            List<BookModel> diff = new ArrayList<BookModel>();
+            diff = getDifference(bookModels, dbBookModels);
+            List<BookModel> borrowBooksData = new ArrayList<>();
+            List<BookModel> returnBooksData = new ArrayList<>();
+            if(diff.size()<=0){
+                //差异为0代表没有书籍变动，直接返回
+                jsonResult.setResult(true);
+                return jsonResult;
+            }
+            // todo 4. 更新用户借阅记录--借书/还书表
+            JSONObject jsonObject = JSON.parseObject(jsonListStr);
+            String[] jsonStr = new String[bookboxModels.size()];
+            for (int i = 0; i < bookboxModels.size(); i++) {
+                jsonStr[i] = jsonObject.getString(bookboxModels.get(i).getBoxRfid());
+            }
+
+            for (BookModel bookModel : diff) {
+                //等于0代表原来就在数据库中，所以只能是借走操作0
+                if (bookModel.getBooksStatus() == 0) {
+                    try {
+                        BorrowModel borrowModel = new BorrowModel();
+                        borrowModel.setUserId(userId);
+                        borrowModel.setBookRfid(bookModel.getBookRfid());
+                        borrowCtrl.addBorrowForAPI(borrowModel);
+                        bookModel.setTradeSuccess(1);
+                    } catch (Exception e) {
+                        bookModel.setTradeSuccess(0);
+                    } finally {
+                        borrowBooksData.add(bookModel);
+                    }
+                } else {
+                    try {
+                        BorrowModel borrowModel = new BorrowModel();
+                        borrowModel.setUserId(userId);
+                        borrowModel.setBookRfid(bookModel.getBookRfid());
+                        borrowModel.setActualBookcaseId(bookcaseModel.getBookcaseId());
+                        //todo 获取该书还入的书箱信息
+                        for (int i = 0; i < bookboxModels.size(); i++) {
+                            if (jsonStr[i].contains(bookModel.getBookRfid())) {
+                                borrowModel.setActualBoxId(bookboxModels.get(i).getBoxSid());
+                                break;
+                            }
+                        }
+                        borrowCtrl.returnBorrowForAPI(borrowModel, 0, "");
+                        bookModel.setTradeSuccess(1);
+                    } catch (Exception e) {
+                        bookModel.setTradeSuccess(0);
+                    } finally {
+                        returnBooksData.add(bookModel);
+                    }
+                }
+            }
+            String a = JSON.toJSONStringWithDateFormat(borrowBooksData, "yyyy-MM-dd HH:mm:ss", SerializerFeature.WriteDateUseDateFormat);
+            String b = JSON.toJSONStringWithDateFormat(returnBooksData, "yyyy-MM-dd HH:mm:ss", SerializerFeature.WriteDateUseDateFormat);
+            //jsonResult.setData(JsonUtil.map2json(map));
+            jsonResult.setBorrowBooksData(a);
+            jsonResult.setReturnBooksData(b);
+            System.out.println(a);
+            System.out.println(b);
+
+        } catch (Exception e) {
+            jsonResult.setResult(false);
+            jsonResult.setMessage(e.getMessage());
+            e.printStackTrace();
+            return jsonResult;
+        }
+        jsonResult.setResult(true);
+        return jsonResult;
     }
 
 

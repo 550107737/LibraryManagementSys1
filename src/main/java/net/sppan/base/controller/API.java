@@ -181,9 +181,9 @@ public class API extends BaseController {
         return jsonResult;
     }
 
-    private List<BookModel> getBooksInBookcase(String jsonListStr, List<BookboxModel> bookboxModels) {
+    private List<BookModel> getBooksInBookcase(String jsonBooksRfid, List<BookboxModel> bookboxModels) {
         List<BookModel> bookModels = new ArrayList<>();
-        JSONObject jsonObject = JSON.parseObject(jsonListStr);
+        JSONObject jsonObject = JSON.parseObject(jsonBooksRfid);
         String[] jsonStr = new String[bookboxModels.size()];
         for (int i = 0; i < bookboxModels.size(); i++) {
             jsonStr[i] = jsonObject.getString(bookboxModels.get(i).getBoxRfid());
@@ -240,7 +240,7 @@ public class API extends BaseController {
      */
     @RequestMapping(value = {"/door/checkDoorCloseStatus"})
     @ResponseBody
-    public JsonResult checkDoorCloseStatus(@ModelAttribute("param") ParamModel param, @RequestParam String userId,@RequestParam String jsonListStr) {
+    public JsonResult checkDoorCloseStatus(@ModelAttribute("param") ParamModel param, @RequestParam String userId,@RequestParam String jsonBooksRfid) {
         Date date = new Date();
         JsonResult jsonResult = new JsonResult();
         jsonResult.setApi_flag(LabConsts.API_FLAG);
@@ -264,7 +264,7 @@ public class API extends BaseController {
                 dbBookModels = new ArrayList<BookModel>();
             }
             //获取书柜内书籍列表
-            List<BookModel> bookModels = getBooksInBookcase(jsonListStr, bookboxModels);
+            List<BookModel> bookModels = getBooksInBookcase(jsonBooksRfid, bookboxModels);
 
             //todo 3. 判断多出书还是少了书籍（单独写一个方法，盘点的时候可以直接调用）
 
@@ -278,7 +278,7 @@ public class API extends BaseController {
                 return jsonResult;
             }
             // todo 4. 更新用户借阅记录--借书/还书表
-            JSONObject jsonObject = JSON.parseObject(jsonListStr);
+            JSONObject jsonObject = JSON.parseObject(jsonBooksRfid);
             String[] jsonStr = new String[bookboxModels.size()];
             for (int i = 0; i < bookboxModels.size(); i++) {
                 jsonStr[i] = jsonObject.getString(bookboxModels.get(i).getBoxRfid());
@@ -347,7 +347,7 @@ public class API extends BaseController {
      */
     @RequestMapping(value = {"/door/reportGridInventoryData"})
     @ResponseBody
-    public JsonResult bookCheck(@ModelAttribute("param") ParamModel param, String jsonListStr) {
+    public JsonResult bookCheck(@ModelAttribute("param") ParamModel param, String jsonBooksRfid) {
         Date date = new Date();
         JsonResult jsonResult = new JsonResult();
         jsonResult.setApi_flag(LabConsts.API_FLAG);
@@ -370,7 +370,7 @@ public class API extends BaseController {
                 dbBookModels = new ArrayList<BookModel>();
             }
             //获取书柜内书籍列表
-            List<BookModel> bookModels = getBooksInBookcase(jsonListStr, bookboxModels);
+            List<BookModel> bookModels = getBooksInBookcase(jsonBooksRfid, bookboxModels);
             ;
             //todo 3.判断书柜的书籍和数据库是否一致 ，判断多出书还是少了书籍（单独写一个方法，可以直接调用borrowBook 方法）
             List<BookModel> diff = new ArrayList<BookModel>();

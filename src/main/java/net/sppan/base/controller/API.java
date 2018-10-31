@@ -155,7 +155,7 @@ public class API extends BaseController {
                 jsonResult.setResult(true);
                 return jsonResult;
             }
-            // todo 4. 更新用户借阅记录--借书/还书表
+            // todo 4. 无需---更新用户借阅记录--借书/还书表
             JSONObject jsonObject = JSON.parseObject(jsonBooksRfid);
             String[] jsonStr = new String[bookboxModels.size()];
             for (int i = 0; i < bookboxModels.size(); i++) {
@@ -305,14 +305,15 @@ public class API extends BaseController {
                 }
 
             }
-            String a = JSON.toJSONStringWithDateFormat(borrowBooksData, "yyyy-MM-dd HH:mm:ss", SerializerFeature.WriteDateUseDateFormat);
+            //todo 只用告诉APP成功与否即可
+            /*String a = JSON.toJSONStringWithDateFormat(borrowBooksData, "yyyy-MM-dd HH:mm:ss", SerializerFeature.WriteDateUseDateFormat);
             String b = JSON.toJSONStringWithDateFormat(returnBooksData, "yyyy-MM-dd HH:mm:ss", SerializerFeature.WriteDateUseDateFormat);
             //jsonResult.setData(JsonUtil.map2json(map));
             jsonResult.setBorrowBooksData(a);
             jsonResult.setReturnBooksData(b);
             System.out.println(a);
             System.out.println(b);
-
+*/
         } catch (Exception e) {
             jsonResult.setResult(false);
             jsonResult.setMessage(e.getMessage());
@@ -332,7 +333,7 @@ public class API extends BaseController {
      */
     @RequestMapping(value = {"/door/reportGridInventoryData"})
     @ResponseBody
-    public JsonResult bookCheck(@ModelAttribute("param") ParamModel param, String jsonBooksRfid) {
+    public JsonResult bookCheck(@ModelAttribute("param") ParamModel param,@RequestParam  String jsonBooksRfid) {
         Date date = new Date();
         JsonResult jsonResult = new JsonResult();
         jsonResult.setApi_flag(LabConsts.API_FLAG);
